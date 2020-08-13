@@ -1,0 +1,9 @@
+<head>
+    <title>{{ .Site.Params.title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <link href="{{ "/css/tailwind.min.css" | relURL }}" rel="stylesheet" type="text/css">
+    <link href="{{ "/css/add-on.css" | relURL }}" rel="stylesheet" type="text/css">
+    <script src="{{ "/js/vue.min.js" | relURL }}"></script>
+    {{ block "header_css" . }}{{ end }}
+</head>
