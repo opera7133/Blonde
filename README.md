@@ -39,5 +39,8 @@ Inside the folder of your Hugo site run:
 $ git submodule update --remote --merge
 ```
 
+## Contributing
+If you find a bug or have an idea for a feature, feel free to write an [issue](https://github.com/opera7133/Blonde/issues) or make a PR.
+
 ## License
 This theme is released under the [MIT license](https://github.com/opera7133/Blonde/blob/master/LICENSE).
