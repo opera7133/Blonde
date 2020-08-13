@@ -1,0 +1,63 @@
+baseURL = "https://gohugo.io"
+title = "Blonde"
+author = "Steve Francia"
+copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
+paginate = 3
+languageCode = "ja"
+DefaultContentLanguage = "ja"
+enableInlineShortcodes = true
+theme = "Blonde"
+hasCJKLanguage = true
+summaryLength = 10
+
+[menu]
+
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 3
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+archive = "archives"
+
+[privacy]
+
+  [privacy.vimeo]
+    disabled = false
+    simple = true
+
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true
+    simple = true
+
+  [privacy.instagram]
+    disabled = false
+    simple = true
+
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true
+
+[services]
+
+  [services.instagram]
+    disableInlineCSS = true
+
+  [services.twitter]
+    disableInlineCSS = true
