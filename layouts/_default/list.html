@@ -4,7 +4,7 @@
 <div class="grid grid-cols-3 gap-4">
     <div class="col-span-3 lg:col-span-2">
         {{if .IsHome}}
-        {{.Scratch.Set "Paginator" (.Paginate (where .Site.RegularPages "Type" "in" site.Params.mainSections) 6 )}}
+        {{.Scratch.Set "Paginator" (.Paginate (where .Site.RegularPages "Type" "in" site.Params.mainSections) 5 )}}
         {{else}}
         {{.Scratch.Set "Paginator" .Paginator}}
         {{end}}
