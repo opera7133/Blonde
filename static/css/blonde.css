@@ -156,4 +156,6 @@
 
 pre {
   padding:0.5rem;
+  max-width: 52em;
+  overflow: auto;
 }
