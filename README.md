@@ -1,6 +1,8 @@
 # Blonde
 Blonde, A simple theme using Tailwind CSS.
 
+![blonde](https://user-images.githubusercontent.com/39876629/90247119-ebae6600-de70-11ea-9aeb-98e2500961a1.png)
+
 :warning: **This theme is currently under development!**
 
 ## Features
