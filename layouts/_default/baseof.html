@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja">
+{{- partial "head.html" . -}}
+
+<body class="font-sans">
+    <div class="min-h-screen flex flex-col">
+        {{- partial "header.html" . -}}
+        <div class="container mx-auto mt-4 flex-grow" id="content">
+            {{- block "main" . }}{{- end }}
+        </div>
+        {{- partial "footer.html" . -}}
+    </div>
+</body>
+
+</html>

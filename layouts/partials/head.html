@@ -1,0 +1,11 @@
+<head>
+    {{- partial "analytics" . -}}
+    <title>{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <link href="{{ "/css/tailwind.min.css" | relURL }}" rel="stylesheet" type="text/css">
+    <link href="{{ "/css/blonde.css" | relURL }}" rel="stylesheet" type="text/css">
+    <script src="{{ "/js/vue.min.js" | relURL }}"></script>
+    {{ partial "seo/print.html" . }}
+    {{ block "header_css" . }}{{ end }}
+</head>

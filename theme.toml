@@ -1,0 +1,12 @@
+name = "Blonde"
+license = "MIT"
+licenselink = "https://github.com/opera7133/Blonde/blob/master/LICENSE"
+description = "Blonde, A simple theme using Tailwind CSS"
+homepage = "https://github.com/opera7133/Blonde"
+tags = ["blog", "minimal", "simple", "clean", "tailwindcss", "personal"]
+features = ["blog"]
+min_version = "0.41.0"
+
+[author]
+  name = "wamo"
+  homepage = "https://www.accessto.net"
