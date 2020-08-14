@@ -1,5 +1,9 @@
 <div class="max-w-sm w-full px-2 lg:max-w-full lg:flex mb-3 mt-3 lg:px-0 hover4">
+    {{ if .Params.image }}
+    <img class="w-auto lg:h-48" src="{{ .Params.image | relURL }}" />
+    {{ else }}
     <img class="w-auto lg:h-48" src="/img/default.png">
+    {{ end }}
     <div
         class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r pl-4 p-2 flex flex-col justify-between leading-normal max-w-full w-full">
         <div class="mb-8">

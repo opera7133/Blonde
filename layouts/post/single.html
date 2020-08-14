@@ -18,6 +18,7 @@
                 {{ end }}
             </div>
         </aside>
+        <img class="my-4" src="{{ .Params.image | relURL }}">
         <div class="content">{{.Content}}</div>
         <hr class="py-2">
         <aside id="meta">
@@ -45,6 +46,8 @@
                 {{ end }}
             </div>
         </aside>
+        <hr class="py-2">
+        {{ template "_internal/disqus.html" . }}
     </div>
 </div>
 {{ end }}

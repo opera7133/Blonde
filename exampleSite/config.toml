@@ -1,14 +1,18 @@
-baseURL = "https://gohugo.io"
+baseURL = ""
 title = "Blonde"
-author = "Steve Francia"
-copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
-paginate = 3
-languageCode = "ja"
-DefaultContentLanguage = "ja"
+author = "Wamo"
+languageCode = "en"
+DefaultContentLanguage = "en"
 enableInlineShortcodes = true
 theme = "Blonde"
-hasCJKLanguage = true
 summaryLength = 10
+enableRobotsTXT = true
+
+# Please enable this feature if the site is available in Japanese, Chinese or Korean.
+hasCJKLanguage = true
+
+# If you're using Google Analytics, you can enable this feature.
+#googleAnalytics = "UA-12345678-1"
 
 [menu]
 

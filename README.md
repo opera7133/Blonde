@@ -7,8 +7,11 @@ Blonde, A simple theme using Tailwind CSS.
 * Responsive
 * Google Analytics
 * Pagination
-* Tags support
+* Mobile support
+* RSS feeds
+* Tags/Categories support
 * Archive
+* Disqus
 
 ## Installation
 Inside the folder of your Hugo site run:
