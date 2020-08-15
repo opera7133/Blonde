@@ -3,7 +3,7 @@ Blonde, A simple theme using Tailwind CSS.
 
 The demo can be seen here: [https://blonde.netlify.app](https://blonde.netlify.app)
 
-![blonde](https://user-images.githubusercontent.com/39876629/90247119-ebae6600-de70-11ea-9aeb-98e2500961a1.png)
+![blonde](https://user-images.githubusercontent.com/39876629/90312683-5333e680-df41-11ea-91e5-158caa2a4368.png)
 
 :warning: **This theme is currently under development!**
 
