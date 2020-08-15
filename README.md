@@ -16,6 +16,7 @@ The demo can be seen here: [https://blonde.netlify.app](https://blonde.netlify.a
 * Tags/Categories support
 * Archive
 * Disqus
+* 100 Google Lighthouse speed score
 
 ## Prerequisites
 
