@@ -32,6 +32,8 @@ Inside the folder of your Hugo site run:
 
 ```
 $ git submodule add https://github.com/opera7133/Blonde.git themes/Blonde
+$ cd themes/Blonde
+$ npm install
 ```
 
 For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
