@@ -11,12 +11,11 @@ The demo can be seen here: [https://blonde.netlify.app](https://blonde.netlify.a
 * Responsive
 * Google Analytics
 * Pagination
-* Mobile support
+* Syntax Highlight
 * RSS feeds
-* Tags/Categories support
-* Archive
+* Support tags and categories and archives
 * Disqus
-* 100 Google Lighthouse speed score
+* 100 Google Lighthouse speed score :zap:
 
 ## Prerequisites
 
