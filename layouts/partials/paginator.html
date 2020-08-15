@@ -4,11 +4,11 @@
     <ul class="pagination">
         <!-- Don't show on 1st and 2nd page -->
         {{ if and (ne $pag.PageNumber 1) (ne $pag.PageNumber 2) }}
-        <li class="page-item"><a href="{{ $pag.First.URL }}" rel="first" class="page-link">最初へ</a></li>
+        <li class="page-item"><a href="{{ $pag.First.URL }}" rel="first" class="page-link">First</a></li>
         {{ end }}
 
         {{ if $pag.HasPrev  }}
-        <li class="page-item"><a href="{{ $pag.Prev.URL }}" rel="prev" class="page-link">前へ</a></li>
+        <li class="page-item"><a href="{{ $pag.Prev.URL }}" rel="prev" class="page-link">Prev</a></li>
         {{ end }}
 
         {{ range $pag.Pagers }}
@@ -24,12 +24,12 @@
         {{ end }}
 
         {{ if $pag.HasNext }}
-        <li class="page-item"><a href="{{ $pag.Next.URL }}" rel="next" class="page-link">次へ</a></li>
+        <li class="page-item"><a href="{{ $pag.Next.URL }}" rel="next" class="page-link">Next</a></li>
         {{ end }}
 
         <!-- Don't show on last and 2nd last page -->
         {{ if and (ne $pag.PageNumber $pag.TotalPages) ((ne $pag.PageNumber (sub $pag.TotalPages 1))) }}
-        <li class="page-item"><a href="{{ $pag.Last.URL }}" rel="last" class="page-link">最後へ</a></li>
+        <li class="page-item"><a href="{{ $pag.Last.URL }}" rel="last" class="page-link">Last</a></li>
         {{ end }}
     </ul>
 </nav>

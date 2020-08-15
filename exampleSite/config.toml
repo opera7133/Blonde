@@ -1,11 +1,10 @@
 baseURL = ""
 title = "Blonde"
-author = "Wamo"
-languageCode = "en"
-DefaultContentLanguage = "en"
+author = "wamo"
+languageCode = "ja"
+DefaultContentLanguage = "ja"
 enableInlineShortcodes = true
 theme = "Blonde"
-summaryLength = 10
 enableRobotsTXT = true
 
 # Please enable this feature if the site is available in Japanese, Chinese or Korean.
@@ -13,6 +12,12 @@ hasCJKLanguage = true
 
 # If you're using Google Analytics, you can enable this feature.
 #googleAnalytics = "UA-12345678-1"
+
+# Disqus Comment System
+#disqusShortname = ""
+
+[params]
+paginator_pages = "5"
 
 [menu]
 
