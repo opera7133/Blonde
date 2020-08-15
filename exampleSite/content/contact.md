@@ -7,8 +7,8 @@ author = "Hugo Authors"
 +++
 
 {{< rawhtml >}}
-<p>To contact us, please fill out the form below.</p>
-<form name='contact' method='post'>
+<div class="content"><p>To contact us, please fill out the form below.</p>
+<form name='contact' method='post' action="https://formspree.io/">
     <div class="cp_iptxt">
         <input type="text" placeholder="Your Name" name="name" required>
     </div>
@@ -21,6 +21,6 @@ author = "Hugo Authors"
     <div class="cp_iptxt">
         <textarea rows="5" cols="30" placeholder="Message" name="message" required></textarea>
     </div>
-    <input type="submit" value="Submit" class="bg-transparent hover:bg-gray-800 text-black font-semibold hover:text-white h-12 border border-gray-800 hover:border-transparent rounded w-full">
-</form>
+    <input type="submit" value="Submit" class="bg-transparent hover:bg-gray-800 text-black font-semibold hover:text-white py-2 px-4 border border-gray-800 hover:border-transparent rounded w-full">
+</form></div>
 {{< /rawhtml >}}

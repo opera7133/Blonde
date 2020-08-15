@@ -138,13 +138,14 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
   * Cheese
 
 ## Other Elements — abbr, sub, sup, kbd, mark
+{{< rawhtml >}}
+<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.</br>
 
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
+H<sub>2</sub>O</br>
 
-H<sub>2</sub>O
+X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup></br>
 
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
+Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.</br>
 
-Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.</br>
+{{< /rawhtml >}}
