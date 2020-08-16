@@ -5,7 +5,7 @@ description = "Blonde, A simple theme using Tailwind CSS"
 homepage = "https://github.com/opera7133/Blonde"
 tags = ["blog", "minimal", "simple", "clean", "tailwindcss", "personal"]
 features = ["blog"]
-min_version = "0.41.0"
+min_version = "0.69"
 
 [author]
   name = "wamo"
