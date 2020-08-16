@@ -1,4 +1,6 @@
-# Blonde
+# Blonde 
+![](https://img.shields.io/github/license/opera7133/Blonde?style=for-the-badge) ![](https://img.shields.io/github/last-commit/opera7133/Blonde?style=for-the-badge)
+
 Blonde, A simple theme using Tailwind CSS.
 
 The demo can be seen here: [https://blonde.netlify.app](https://blonde.netlify.app)
