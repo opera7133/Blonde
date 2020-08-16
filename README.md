@@ -3,7 +3,7 @@ Blonde, A simple theme using Tailwind CSS.
 
 The demo can be seen here: [https://blonde.netlify.app](https://blonde.netlify.app)
 
-![blonde](https://user-images.githubusercontent.com/39876629/90247119-ebae6600-de70-11ea-9aeb-98e2500961a1.png)
+![blonde](https://user-images.githubusercontent.com/39876629/90312683-5333e680-df41-11ea-91e5-158caa2a4368.png)
 
 :warning: **This theme is currently under development!**
 
@@ -11,11 +11,11 @@ The demo can be seen here: [https://blonde.netlify.app](https://blonde.netlify.a
 * Responsive
 * Google Analytics
 * Pagination
-* Mobile support
+* Syntax Highlight
 * RSS feeds
-* Tags/Categories support
-* Archive
+* Support tags and categories and archives
 * Disqus
+* 100 Google Lighthouse speed score :zap:
 
 ## Prerequisites
 
@@ -31,6 +31,8 @@ Inside the folder of your Hugo site run:
 
 ```
 $ git submodule add https://github.com/opera7133/Blonde.git themes/Blonde
+$ cd themes/Blonde
+$ npm install
 ```
 
 For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
