@@ -1,11 +1,11 @@
 <div class="bg-gray-800">
-    <div class="container mr-auto ml-auto" id="app">
+    <div class="container mr-auto ml-auto">
         <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-6">
             <div class="flex items-center flex-no-shrink bg-gray-800 text-white mr-6">
                 <a href="/"><span class="font-semibold text-2xl tracking-tight">{{ .Site.Title }}</span></a>
             </div>
             <div class="block sm:hidden">
-                <button @click="toggle"
+                <button id="hamburgerbtn"
                     class="flex items-center px-3 py-2 border rounded text-gray-300 border-gray-200 hover:text-white hover:border-white">
                     <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <title>Menu</title>
@@ -13,7 +13,7 @@
                     </svg>
                 </button>
             </div>
-            <div :class="open ? 'block': 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
+            <div class="hidden w-full md:flex md:flex-row sm:items-center sm:w-auto" id="mobileMenu">
                 <div class="text-sm lg:flex-grow">
                 </div>
                 <div>
@@ -28,16 +28,17 @@
         </nav>
     </div>
 </div>
+<style>
+    .active{
+        display: block;
+    }    
+</style>
 <script>
-    new Vue({
-        el: '#app',
-        data: {
-            open: false,
-        },
-        methods: {
-            toggle() {
-                this.open = !this.open
-            }
-        }
-    })
+    let hamburger = document.getElementById('hamburgerbtn');
+
+    let mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', function () {
+        mobileMenu.classList.toggle('active');
+    });
 </script>
