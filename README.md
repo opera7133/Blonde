@@ -5,8 +5,6 @@ Blonde, A simple theme using Tailwind CSS.
 
 The demo can be seen here: [https://blonde.netlify.app](https://blonde.netlify.app)
 
-![blonde](https://user-images.githubusercontent.com/39876629/90312683-5333e680-df41-11ea-91e5-158caa2a4368.png)
-
 ## Features
 * Responsive
 * Google Analytics
