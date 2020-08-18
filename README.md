@@ -20,14 +20,14 @@ The demo can be seen here: [https://blonde.netlify.app](https://blonde.netlify.a
 Make sure to install `postcss-cli` and `autoprefixer` globally in your environment, as Hugo Pipe’s PostCSS requires it. This is mentioned in the [Hugo Docs](https://gohugo.io/hugo-pipes/postcss/).
 
 ```bash
-npm install -g postcss-cli
-npm install -g autoprefixer
+$ npm install -g postcss-cli
+$ npm install -g autoprefixer
 ```
 
 ## Installation
 Inside the folder of your Hugo site run:
 
-```
+```bash
 $ git submodule add https://github.com/opera7133/Blonde.git themes/Blonde
 $ cd themes/Blonde
 $ npm install
@@ -43,7 +43,7 @@ Copy the config.toml in the exampleSite to the root of your Hugo site. Change st
 
 ### Check your site
 In order to see your site in action, run Hugo's built-in local server.
-```
+```bash
 $ hugo server
 ```
 Now enter `localhost:1313` in the address bar of your browser.
@@ -51,7 +51,7 @@ Now enter `localhost:1313` in the address bar of your browser.
 ### Update the theme
 Inside the folder of your Hugo site run:
 
-```
+```bash
 $ git submodule update --remote --merge
 ```
 
