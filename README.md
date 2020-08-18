@@ -1,13 +1,11 @@
 # Blonde 
-![](https://img.shields.io/github/license/opera7133/Blonde?style=for-the-badge) ![](https://img.shields.io/github/last-commit/opera7133/Blonde?style=for-the-badge)
+![](https://github.com/opera7133/Blonde/raw/master/images/screenshot.png)
 
 Blonde, A simple theme using Tailwind CSS.
 
 The demo can be seen here: [https://blonde.netlify.app](https://blonde.netlify.app)
 
 ![blonde](https://user-images.githubusercontent.com/39876629/90312683-5333e680-df41-11ea-91e5-158caa2a4368.png)
-
-:warning: **This theme is currently under development!**
 
 ## Features
 * Responsive
@@ -17,7 +15,7 @@ The demo can be seen here: [https://blonde.netlify.app](https://blonde.netlify.a
 * RSS feeds
 * Support tags and categories and archives
 * Disqus
-* 100/100 Google Lighthouse speed score :zap:
+* 100/100 Google Lighthouse speed score
 
 ## Prerequisites
 
