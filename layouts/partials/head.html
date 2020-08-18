@@ -3,17 +3,25 @@
     <title>{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <link rel="icon" type="image/png" href="{{ "/favicon.png" | absURL }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "/favicon/apple-touch-icon.png" | absURL }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "/favicon/favicon-32x32.png" | absURL }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "/favicon/favicon-16x16.png" | absURL }}">
+    <link rel="manifest" href="{{ "/favicon/site.webmanifest" | absURL }}" />
+    <link rel="mask-icon" href="{{ "/favicon/safari-pinned-tab.svg" | absURL }}"
+        color="#5bbad5" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <meta name="theme-color" content="#ffffff">
     <meta property="og:title" content="{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}" />
 
     {{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
     {{- if .Site.IsServer }}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
     {{ else }}
-        {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
+    {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
     {{ end -}}
-    <link href="{{ "/css/blonde.css" | absURL }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'">
+    <link href="{{ "/css/blonde.css" | absURL }}" rel="stylesheet" type="text/css" media="print"
+        onload="this.media='all'">
     {{ partial "seo/print.html" . }}
     {{ block "header_css" . }}{{ end }}
 </head>
