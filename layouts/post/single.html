@@ -13,7 +13,7 @@
                 <div id="tags">
                     <span class="icon-local_offer mr-1"></span>
                     {{ range . }}
-                    <a href="/{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a> |
+                    <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a> |
                     {{ end }}
                 </div>
                 {{ end }}
@@ -31,7 +31,7 @@
                 {{ range . }}
                 <span
                     class="inline-flex py-2 leading-4 mr-2 mb-2 content-center bg-gray-200 justify-center h-8 px-3 text-blue-500 hover:text-black"><a
-                        href="/{{ "categories" | absURL}}/{{ . | urlize }}">{{ . }}</a></span>
+                        href="{{ "categories" | absURL}}/{{ . | urlize }}">{{ . }}</a></span>
                 {{ end }}
             </div>
             {{ end }}

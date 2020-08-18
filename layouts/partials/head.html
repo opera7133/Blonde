@@ -3,7 +3,7 @@
     <title>{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="{{ "/favicon.png" | absURL }}">
     <meta property="og:title" content="{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}" />
 
     {{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
@@ -13,7 +13,7 @@
         {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="print" onload="this.media='all'">
     {{ end -}}
-    <link href="{{ "/css/blonde.css" | relURL }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'">
+    <link href="{{ "/css/blonde.css" | absURL }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'">
     {{ partial "seo/print.html" . }}
     {{ block "header_css" . }}{{ end }}
 </head>

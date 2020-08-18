@@ -2,7 +2,7 @@
     {{ if .Params.image }}
     <img class="w-auto lg:h-48" src="{{ .Params.image | relURL }}" />
     {{ else }}
-    <img class="w-auto lg:h-48" src="/img/default.png">
+    <img class="w-auto lg:h-48" src="{{ "/img/default.png" | absURL }}">
     {{ end }}
     <div
         class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r pl-4 p-2 flex flex-col justify-between leading-normal max-w-full w-full">
