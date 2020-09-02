@@ -2,7 +2,7 @@
 
 {{ define "main" }}
 <div class="grid grid-cols-3 gap-4">
-    <div class="col-span-3 lg:col-span-2">
+    <div class="col-span-3 lg:col-span-2 mb-3">
         {{if .IsHome}}
         {{.Scratch.Set "Paginator" (.Paginate (where .Site.RegularPages "Type" "in" site.Params.mainSections) (.Site.Params.paginator_pages) )}}
         {{else}}
@@ -24,6 +24,7 @@
                 href="{{ $.Site.BaseURL }}archives/{{ $name | urlize | lower }}">{{ $name }} ({{ .Count }})</a>
             {{ end }}
         </div>
+        {{ with .Params.categories }}
         <div class="panel mb-3">
             <p class="text-xl bg-gray-300 rounded-t-lg text-gray-800 py-3 pl-3">Categories</p>
             {{ range $key, $value := .Site.Taxonomies.categories }}
@@ -32,6 +33,8 @@
 
             {{ end }}
         </div>
+        {{ end }}
+        {{ with .Params.tags }}
         <div class="panel mb-3">
             <p class="text-xl bg-gray-300 rounded-t-lg text-gray-800 py-3 pl-3">Tags</p>
             <div class="panel-block bg-white border p-2">
@@ -43,6 +46,7 @@
                 {{- end }}
             </div>
         </div>
+        {{ end }}
     </div>
 </div>
 {{ end }}
