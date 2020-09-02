@@ -24,7 +24,7 @@
                 href="{{ $.Site.BaseURL }}archives/{{ $name | urlize | lower }}">{{ $name }} ({{ .Count }})</a>
             {{ end }}
         </div>
-        {{ with .Site.Taxonomies.categories }}
+        {{ if .Site.Taxonomies.categories }}
         <div class="panel mb-3">
             <p class="text-xl bg-gray-300 rounded-t-lg text-gray-800 py-3 pl-3">Categories</p>
             {{ range $key, $value := .Site.Taxonomies.categories }}
@@ -34,7 +34,7 @@
             {{ end }}
         </div>
         {{ end }}
-        {{ with .Site.Taxonomies.tags }}
+        {{ if .Site.Taxonomies.tags }}
         <div class="panel mb-3">
             <p class="text-xl bg-gray-300 rounded-t-lg text-gray-800 py-3 pl-3">Tags</p>
             <div class="panel-block bg-white border p-2">
