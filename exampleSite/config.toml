@@ -18,6 +18,7 @@ hasCJKLanguage = true
 
 [params]
 paginator_pages = "5"
+archive_dropdown = "false"
 
 [menu]
 
