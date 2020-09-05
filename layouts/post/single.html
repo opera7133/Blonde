@@ -38,13 +38,13 @@
             <div class="grid grid-cols-2">
                 <div class="col-span-1">
                     {{ with .PrevInSection }}
-                    <div class="bg-gray-200 h-12 m-3 text-center py-3 lg:py-1">
+                    <div class="bg-gray-200 h-auto m-3 text-center py-3 lg:py-1">
                         <a class="previous lg:text-2xl" href="{{.Permalink}}">&lt; {{.Title}}</a>
                     </div>
                     {{ end }}
                 </div>
                 {{ with .NextInSection }}
-                <div class="col-span-1 bg-gray-200 h-12 m-3 text-center py-3 lg:py-1">
+                <div class="col-span-1 bg-gray-200 h-auto m-3 text-center py-3 lg:py-1">
                     <a class="next lg:text-2xl" href="{{.Permalink}}"> {{.Title}} &gt;</a>
                 </div>
                 {{ end }}
