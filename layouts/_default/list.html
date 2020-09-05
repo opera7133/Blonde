@@ -22,14 +22,14 @@
       {{ if eq .Site.Params.archive_dropdown "false" }}
       {{ range $name, $items := .Site.Taxonomies.archives }}
       <a class="text-center block border py-2 px-4 bg-white hover:bg-gray-200 text-gray-800"
-        href="{{ $.Site.BaseURL }}archives/{{ $name | urlize | lower }}">{{ $name }} ({{ .Count }})</a>
+        href="{{ $.Site.BaseURL }}/archives/{{ $name | urlize | lower }}">{{ $name }} ({{ .Count }})</a>
       {{ end }}
       {{ else }}
       <select class="text-center block border py-2 px-4 bg-white hover:bg-gray-200 text-gray-800 w-full" name="archive"
         onChange="location.href=value;">
         <option>Select Archive...</option>
         {{ range $name, $items := .Site.Taxonomies.archives }}
-        <option value="{{ $.Site.BaseURL }}archives/{{ $name | urlize | lower }}">{{ $name }} ({{ .Count }})
+        <option value="{{ $.Site.BaseURL }}/archives/{{ $name | urlize | lower }}">{{ $name }} ({{ .Count }})
         </option>
         {{ end }}
       </select>
@@ -41,7 +41,7 @@
       <p class="text-xl bg-gray-300 rounded-t-lg text-gray-800 py-3 pl-3">Categories</p>
       {{ range $key, $value := .Site.Taxonomies.categories }}
       <a class="text-center block border py-2 px-4 bg-white hover:bg-gray-200 text-gray-800"
-        href="{{ $.Site.BaseURL }}categories/{{ $key | urlize  }}">{{ $key | humanize }}</a>
+        href="{{ $.Site.BaseURL }}/categories/{{ $key | urlize  }}">{{ $key | humanize }}</a>
 
       {{ end }}
     </div>
