@@ -3,13 +3,13 @@
     <title>{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ "/favicon/apple-touch-icon.png" | absURL }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ "/favicon/favicon-32x32.png" | absURL }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ "/favicon/favicon-16x16.png" | absURL }}">
-    <link rel="manifest" href="{{ "/favicon/site.webmanifest" | absURL }}" />
-    <link rel="mask-icon" href="{{ "/favicon/safari-pinned-tab.svg" | absURL }}"
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "/favicon/apple-touch-icon.png" | relURL }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "/favicon/favicon-32x32.png" | relURL }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "/favicon/favicon-16x16.png" | relURL }}">
+    <link rel="manifest" href="{{ "/favicon/site.webmanifest" | relURL }}" />
+    <link rel="mask-icon" href="{{ "/favicon/safari-pinned-tab.svg" | relURL }}"
         color="#5bbad5" />
-    <link rel="shortcut icon" href="{{ "/favicon/favicon.ico" | absURL }}" />
+    <link rel="shortcut icon" href="{{ "/favicon/favicon.ico" | relURL }}" />
     <meta name="theme-color" content="#ffffff">
     <meta property="og:title" content="{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}" />
 
