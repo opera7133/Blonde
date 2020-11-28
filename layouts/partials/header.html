@@ -2,12 +2,19 @@
     <div class="container mr-auto ml-auto">
         <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-6">
             <div class="flex items-center flex-no-shrink bg-gray-800 text-white mr-6">
-                <a href="{{ .Site.BaseURL }}"><span class="font-semibold text-2xl tracking-tight">{{ .Site.Title }}</span></a>
+                <a href="{{ .Site.BaseURL }}"><span
+                        class="font-semibold text-2xl tracking-tight">{{ .Site.Title }}</span></a>
             </div>
-            <div class="block md:hidden">
+            <div class="flex md:hidden">
+                <div class="py-2">
+                    <a id="dark-mode-toggle-1" href="javascript:void(0);" class="no-underline hover:text-white mr-1"><span
+                            id="dark-mode-toggle-icon1"
+                            class="icon-moon inline-flex align-middle leading-normal text-lg ml-2"></span></a>
+                    <span class="text-gray-300">|</span>
+                </div>
                 <button id="hamburgerbtn"
-                    class="flex items-center px-3 py-2 border rounded text-gray-300 border-gray-200 hover:text-white hover:border-white">
-                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    class="flex items-center px-3 py-2 text-gray-300 hover:text-white">
+                    <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <title>Menu</title>
                         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
                     </svg>
@@ -16,7 +23,7 @@
             <div class="hidden w-full md:flex md:flex-row sm:items-center sm:w-auto" id="mobileMenu">
                 <div class="text-sm lg:flex-grow">
                 </div>
-                <div>
+                <div class="navmenu">
                     {{ range .Site.Menus.main }}
                     <a href="{{ .URL }}"
                         class="no-underline block mt-4 sm:inline-block sm:mt-0 text-gray-400 hover:text-white mr-4">
@@ -24,14 +31,20 @@
                     </a>
                     {{ end }}
                 </div>
+                <div class="text-gray-400 invisible md:visible">
+                    <span>|</span>
+                    <a id="dark-mode-toggle-2" href="javascript:void(0);" class="no-underline hover:text-white"><span
+                            id="dark-mode-toggle-icon2"
+                            class="icon-moon inline-flex align-middle leading-normal text-lg ml-2"></span></a>
+                </div>
             </div>
         </nav>
     </div>
 </div>
 <style>
-    .active{
+    .active {
         display: block;
-    }    
+    }
 </style>
 <script>
     let hamburger = document.getElementById('hamburgerbtn');
