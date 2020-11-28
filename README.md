@@ -7,6 +7,7 @@ The demo can be seen here: [https://blonde.netlify.app](https://blonde.netlify.a
 
 ## Features
 * Responsive
+* dark/light mode
 * Google Analytics
 * Pagination
 * Syntax Highlight
