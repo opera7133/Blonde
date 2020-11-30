@@ -5,6 +5,9 @@ Blonde, A simple theme using Tailwind CSS.
 
 The demo can be seen here: [https://blonde.netlify.app](https://blonde.netlify.app)
 
+[![Import this project into Forestry](https://assets.forestry.io/import-to-forestryK.svg)](https://app.forestry.io/quick-start?repo=opera7133/blonde&engine=hugo&version=0.79.0&config=exampleSite)
+
+
 ## Features
 * Responsive
 * dark/light mode
