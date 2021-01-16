@@ -11,14 +11,13 @@
     <link rel="shortcut icon" href="{{ "/favicon/favicon.ico" | relURL }}" />
     <meta name="theme-color" content="#ffffff">
     <meta property="og:title" content="{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}" />
-
-    {{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
-    {{- if .Site.IsServer }}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+    {{ $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+    {{ if .Site.IsServer }}
+        <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
     {{ else }}
-    {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
-    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
-    {{ end -}}
+        {{ $styles := $styles| minify | fingerprint | resources.PostProcess }}
+        <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
+    {{ end }}
     <link id="dark-mode-theme" rel="stylesheet" href="{{ "css/darker.css" | relURL }}" async disabled>
     <link href="{{ "/css/blonde.css" | relURL }}" rel="stylesheet" type="text/css" media="print"
         onload="this.media='all'">

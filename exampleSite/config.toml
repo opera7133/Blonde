@@ -74,3 +74,6 @@ archive = "archives"
 
   [services.twitter]
     disableInlineCSS = true
+
+[build]
+  writeStats = true
