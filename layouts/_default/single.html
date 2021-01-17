@@ -6,5 +6,50 @@
         <h1 class="title text-4xl">{{.Title}}</h1>
         <div class="content py-1">{{.Content}}</div>
     </div>
+    <div class="hidden lg:block lg:col-span-1">
+        <div class="bg-white panel mb-3">
+            <p class="text-xl text-center text-gray-700 py-3 pl-3">Archives</p>
+            {{ if eq .Site.Params.archive_dropdown "false" }}
+            {{ range $name, $items := .Site.Taxonomies.archives }}
+            <a class="text-center block py-2 px-4 text-gray-800"
+                href="{{ $.Site.BaseURL }}/archives/{{ $name | urlize | lower }}">{{ $name }} ({{ .Count }})</a>
+            {{ end }}
+            {{ else }}
+            <select class="text-center block py-2 px-4 duration-100 bg-white hover:bg-gray-200 text-gray-800 w-full"
+                name="archive" onChange="location.href=value;">
+                <option>Select Archive...</option>
+                {{ range $name, $items := .Site.Taxonomies.archives }}
+                <option value="{{ $.Site.BaseURL }}/archives/{{ $name | urlize | lower }}">{{ $name }} ({{ .Count }})
+                </option>
+                {{ end }}
+            </select>
+            {{ end }}
+        </div>
+
+        {{ if .Site.Taxonomies.categories }}
+        <div class="bg-white panel mb-3 pb-5">
+            <p class="text-xl text-center text-gray-700 py-5">Categories</p>
+            {{ range $key, $value := .Site.Taxonomies.categories }}
+            <a class="text-center block duration-100 py-2 px-4 mx-4 hover:bg-gray-100 text-gray-800"
+                href="{{ $.Site.BaseURL }}/categories/{{ $key | urlize  }}">{{ $key | humanize }}</a>
+
+            {{ end }}
+        </div>
+        {{ end }}
+        {{ if .Site.Taxonomies.tags }}
+        <div class="bg-white panel mb-3">
+            <p class="text-xl text-center text-gray-700 py-3 pl-3">Tags</p>
+            <div class="panel-block p-2">
+                {{- range $termName, $entries := .Site.Taxonomies.tags }}
+                <a href="{{ " /tags/" | relLangURL }}{{ $termName | urlize }}">
+                    <span
+                        class="duration-100 inline-flex py-2 leading-4 mr-2 mb-2 content-center bg-gray-100 justify-center h-8 px-3 text-blue-500 hover:text-blue-900">
+                        {{ $termName }}
+                    </span></a>
+                {{- end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
 </div>
 {{ end }}
