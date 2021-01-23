@@ -1,26 +1,29 @@
-+++
-title = "Contact"
-description = "Hugo, the world's fastest framework for building websites"
-date = "2019-02-30"
-aliases = ["contact"]
-author = "Hugo Authors"
-+++
+---
+title: "Contact"
+description: "Hugo, the world's fastest framework for building websites"
+date: 2019-02-30
+aliases: ["contact"]
+author: "Hugo Authors"
+---
 
 {{< rawhtml >}}
-<div class="content"><p>To contact us, please fill out the form below.</p>
-<form name='contact' method='post' action="https://formspree.io/">
-    <div class="cp_iptxt">
-        <input type="text" placeholder="Your Name" name="name" required>
+
+<div class="content">
+    <p class="mb-2">To contact us, please fill out the form below.</p>
+    <form name=contact action=https://formspree.io/f/mayjrrko method=post>
+    <div class="mb-4">
+         <input type=text placeholder="Your Name" name=name class="w-full p-4 bg-gray-200 border border-gray-200 focus:outline-none focus:bg-white focus:border-gray-500" required>
     </div>
-    <div class="cp_iptxt">
-        <input type="text" placeholder="Email Address" name="mail" required>
+    <div class="mb-4">
+        <input type=text placeholder="Email Address" name=mail class="w-full p-4 bg-gray-200 border border-gray-200 focus:outline-none focus:bg-white focus:border-gray-500" required>
     </div>
-    <div class="cp_iptxt">
-        <input type="text" placeholder="Subject" name="title" required>
+    <div class="mb-4">
+        <input type=text placeholder="Subject" name=title class="w-full p-4 bg-gray-200 border border-gray-200 focus:outline-none focus:bg-white focus:border-gray-500" required>
     </div>
-    <div class="cp_iptxt">
-        <textarea rows="5" cols="30" placeholder="Message" name="message" required></textarea>
+    <div class="mb-4">
+        <textarea rows=5 cols=30 placeholder="Message" name=message class="w-full p-4 bg-gray-200 border border-gray-200 focus:outline-none focus:bg-white focus:border-gray-500" required></textarea>
     </div>
-    <input type="submit" value="Submit" class="bg-transparent hover:bg-gray-800 text-black font-semibold hover:text-white py-2 px-4 border border-gray-800 hover:border-transparent rounded w-full">
-</form></div>
+    <input type=submit value="Submit" class="w-full button duration-100 py-2 bg-gray-800 text-white cursor-pointer transition-colors hover:bg-gray-600">
+    </form>
+</div>
 {{< /rawhtml >}}
