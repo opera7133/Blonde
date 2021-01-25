@@ -208,3 +208,6 @@ table {
 ul {
   list-style: inside;
 }
+input{
+    -webkit-appearance: none;
+}
