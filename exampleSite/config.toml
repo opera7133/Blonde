@@ -23,6 +23,12 @@ paginator_pages = "5"
 # Enable this if you want the archive list to be in a drop-down format.
 archive_dropdown = "false"
 
+  [params.post]
+    # See the Tailwind CSS documentation to set it up.
+    # Recommended settings are h-32 to h-48.
+    # https://tailwindcss.com/docs/height
+    thumbnail_height = "h-48"
+
 [menu]
 
   [[menu.main]]

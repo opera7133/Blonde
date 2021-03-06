@@ -1,12 +1,12 @@
 <div class="w-full px-2 lg:max-w-full lg:flex mt-3 lg:px-0 hover4">
     {{ if .Params.image }}
-    <img alt="thumbnail" id="thumb" class="w-auto lg:h-48" src="{{ .Params.image | relURL }}" />
+    <img alt="thumbnail" id="thumb" class="w-auto lg:{{ .Site.Params.post.thumbnail_height }}" src="{{ .Params.image | relURL }}" />
     {{ else }}
-    <img alt="thumbnail" id="thumb" class="w-auto lg:h-48" src="{{ "/img/default.jpg" | relURL }}">
+    <img alt="thumbnail" id="thumb" class="w-auto lg:{{ .Site.Params.post.thumbnail_height }}" src="{{ "/img/default.jpg" | relURL }}">
     {{ end }}
     <div
-        class="bg-white  pl-4 p-2 flex flex-col justify-between leading-normal max-w-full w-full">
-        <div class="mb-8">
+        class="bg-white pl-4 p-2 flex flex-col justify-between leading-normal max-w-full w-full">
+        <div class="">
             <p class="text-sm text-gray-600 flex items-center">
                 <time><span class="icon-access_time mr-1"></span>{{.Date.Format "2006/01/02"}}</time>
             </p>
