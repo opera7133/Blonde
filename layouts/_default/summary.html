@@ -6,12 +6,10 @@
     {{ end }}
     <div
         class="bg-white pl-4 p-2 flex flex-col justify-between leading-normal max-w-full w-full">
-        <div class="">
             <p class="text-sm text-gray-600 flex items-center">
                 <time><span class="icon-access_time mr-1"></span>{{.Date.Format "2006/01/02"}}</time>
             </p>
             <div class="text-gray-900 font-bold text-xl mb-2">{{.Title}}</div>
             <p class="text-gray-700 text-base">{{ substr .Summary 0 130 | plainify }}...</p>
-        </div>
     </div>
 </div>
