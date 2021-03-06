@@ -29,6 +29,9 @@ archive_dropdown = "false"
     # https://tailwindcss.com/docs/height
     thumbnail_height = "h-48"
 
+    # https://tailwindcss.com/docs/width
+    thumbnail_width = "w-auto"
+
 [menu]
 
   [[menu.main]]
