@@ -208,6 +208,15 @@ table {
 ul {
   list-style: inside;
 }
-input,textarea{
-    -webkit-appearance: none;
+input,
+textarea {
+  -webkit-appearance: none;
+}
+@media (min-width: 1024px) {
+  .lg\:h-auto {
+    height: auto;
+  }
+}
+.w-56 {
+  width: 14rem;
 }
