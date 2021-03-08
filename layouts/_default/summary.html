@@ -5,7 +5,7 @@
     <img alt="thumbnail" id="thumb" class="{{ .Site.Params.post.thumbnail_width }} lg:{{ .Site.Params.post.thumbnail_height }}" src="{{ "/img/default.jpg" | relURL }}">
     {{ end }}
     <div
-        class="bg-white pl-4 p-2 flex flex-col justify-between leading-normal max-w-full w-full">
+        class="bg-white pl-4 p-2 justify-between leading-normal max-w-full w-full">
             <p class="text-sm text-gray-600 flex items-center">
                 <time><span class="icon-access_time mr-1"></span>{{.Date.Format "2006/01/02"}}</time>
             </p>
