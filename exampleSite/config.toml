@@ -23,6 +23,9 @@ paginator_pages = "5"
 # Enable this if you want the archive list to be in a drop-down format.
 archive_dropdown = "false"
 
+# Number of tags to be displayed.
+tagsLimit = 20
+
   [params.post]
     # See the Tailwind CSS documentation to set it up.
     # Recommended settings are h-32 to h-48.
