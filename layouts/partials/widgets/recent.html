@@ -1,0 +1,28 @@
+{{ if .Site.Params.widgets.recentposts }}
+{{ $filteredPosts := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ $relatedPosts := shuffle $filteredPosts | first 5 }}
+{{- if $relatedPosts }}
+<div class="bg-white panel mb-3 pb-5">
+    <p class="text-xl text-center text-gray-700 py-5">Recent Posts</p>
+    <div class="mx-6">
+        {{ range $relatedPosts }}
+        <a href="{{ .RelPermalink }}">
+            <div class="w-full block  mt-3 hover4">
+                {{ if .Params.image }}
+                <img alt="thumbnail" id="thumb" src="{{ .Params.image | relURL }}" />
+                {{ else }}
+                <img alt="thumbnail" id="thumb" src="{{ "/img/default.jpg" | relURL }}">
+                {{ end }}
+                <div class="px-2">
+                    <div class="text-gray-900 font-bold text-xl">{{.Title}}</div>
+                    <p class="text-sm text-gray-600 flex items-center pb-3">
+                        <time><span class="icon-access_time mr-1"></span>{{.Date.Format "2006/01/02"}}</time>
+                    </p>
+                </div>
+            </div>
+            {{- end }}
+        </a>
+        {{- end }}
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,20 @@
+{{ if .Site.Params.widgets.tags }}
+{{ if .Site.Taxonomies.tags }}
+<div class="bg-white panel mb-3">
+    <p class="text-xl text-center text-gray-700 py-3 pl-3">Tags</p>
+    <div class="panel-block p-2">
+        {{- $.Scratch.Set "myLimit" 0 }}
+        {{- range $termName, $entries := .Site.Taxonomies.tags }}
+        {{- $.Scratch.Set "myLimit" (add ($.Scratch.Get "myLimit") 1) }}
+        {{- if le ($.Scratch.Get "myLimit") ($.Site.Param `tagslimit`) }}
+        <a href="{{ " /tags/" | relLangURL }}{{ $termName | urlize }}">
+            <span
+                class="duration-100 inline-flex py-2 leading-4 mr-2 mb-2 content-center bg-gray-100 justify-center h-8 px-3 text-blue-500 hover:text-blue-900">
+                {{ $termName }}
+            </span></a>
+        {{- end }}
+        {{- end }}
+    </div>
+</div>
+{{ end }}
+{{ end }}

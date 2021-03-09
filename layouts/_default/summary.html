@@ -1,8 +1,8 @@
 <div class="w-full px-2 lg:max-w-full lg:flex mt-3 lg:px-0 hover4">
     {{ if .Params.image }}
-    <img alt="thumbnail" id="thumb" class="{{ .Site.Params.post.thumbnail_width }} lg:{{ .Site.Params.post.thumbnail_height }}" src="{{ .Params.image | relURL }}" />
+    <img alt="thumbnail" id="thumb" class="lg:{{ .Site.Params.post.thumbnail_width }} lg:{{ .Site.Params.post.thumbnail_height }}" src="{{ .Params.image | relURL }}" />
     {{ else }}
-    <img alt="thumbnail" id="thumb" class="{{ .Site.Params.post.thumbnail_width }} lg:{{ .Site.Params.post.thumbnail_height }}" src="{{ "/img/default.jpg" | relURL }}">
+    <img alt="thumbnail" id="thumb" class="lg:{{ .Site.Params.post.thumbnail_width }} lg:{{ .Site.Params.post.thumbnail_height }}" src="{{ "/img/default.jpg" | relURL }}">
     {{ end }}
     <div
         class="bg-white pl-4 p-2 justify-between leading-normal max-w-full w-full">

@@ -35,6 +35,12 @@ tagsLimit = 20
     # https://tailwindcss.com/docs/width
     thumbnail_width = "w-auto"
 
+  [params.widgets]
+    archives = true
+    categories = true
+    tags = true
+    recentposts = false
+
 [menu]
 
   [[menu.main]]

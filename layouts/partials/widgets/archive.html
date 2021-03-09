@@ -1,0 +1,20 @@
+{{ if .Site.Params.widgets.archives }}
+<div class="bg-white panel mb-3">
+    <p class="text-xl text-center text-gray-700 py-3 px-3">Archives</p>
+    {{ if eq .Site.Params.archive_dropdown "false" }}
+    {{ range $name, $items := .Site.Taxonomies.archives }}
+    <a class="text-center block py-2 px-4 duration-100 bg-white text-gray-800 hover:bg-gray-200"
+        href="{{ $.Site.BaseURL }}/archives/{{ $name | urlize | lower }}">{{ $name }} ({{ .Count }})</a>
+    {{ end }}
+    {{ else }}
+    <select class="text-center block py-2 px-4 duration-100 bg-white hover:bg-gray-200 text-gray-800 w-full"
+        name="archive" onChange="location.href=value;">
+        <option>Select Archive...</option>
+        {{ range $name, $items := .Site.Taxonomies.archives }}
+        <option value="{{ $.Site.BaseURL }}/archives/{{ $name | urlize | lower }}">{{ $name }} ({{ .Count }})
+        </option>
+        {{ end }}
+    </select>
+    {{ end }}
+</div>
+{{ end }}
