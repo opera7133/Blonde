@@ -6,16 +6,11 @@
     <p class="text-xl text-center text-gray-700 py-5">Recent Posts</p>
     <div class="mx-6">
         {{ range $relatedPosts }}
-        <a href="{{ .RelPermalink }}">
-            <div class="w-full block  mt-3 hover4">
-                {{ if .Params.image }}
-                <img alt="thumbnail" id="thumb" src="{{ .Params.image | relURL }}" />
-                {{ else }}
-                <img alt="thumbnail" id="thumb" src="{{ "/img/default.jpg" | relURL }}">
-                {{ end }}
+        <a href="{{ .RelPermalink }}" class="">
+            <div class="w-full block mt-3 bg-white hover:bg-gray-100 duration-200">
                 <div class="px-2">
                     <div class="text-gray-900 font-bold text-xl">{{.Title}}</div>
-                    <p class="text-sm text-gray-600 flex items-center pb-3">
+                    <p class="text-sm text-gray-600 flex items-center pb-1">
                         <time><span class="icon-access_time mr-1"></span>{{.Date.Format "2006/01/02"}}</time>
                     </p>
                 </div>
