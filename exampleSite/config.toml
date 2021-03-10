@@ -40,6 +40,7 @@ tagsLimit = 20
     categories = true
     tags = true
     recentposts = false
+    search = false
 
 # If you're using Yandex.Metrica, you can enable this feature.
 #[params.analytics.yandexmetrica]

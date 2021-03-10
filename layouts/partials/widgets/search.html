@@ -1,0 +1,12 @@
+{{ if .Site.Params.widgets.search }}
+<div class="mb-3">
+    <form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+        <label>
+            <input class="w-full p-3 focus:outline-none" type="search"
+                placeholder="Search..." value="" name="q" aria-label="Search">
+        </label>
+        <input class="hidden" type="submit" value="Search">
+        <input type="hidden" name="sitesearch" value="{{ .Site.BaseURL }}" />
+    </form>
+</div>
+{{ end }}

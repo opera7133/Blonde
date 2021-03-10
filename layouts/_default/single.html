@@ -7,6 +7,7 @@
         <div class="content py-1">{{.Content}}</div>
     </div>
     <div class="hidden lg:block lg:col-span-1">
+        {{ partial "widgets/search.html" . }}
         {{ partial "widgets/archive.html" . }}
         {{ partial "widgets/category.html" . }}
         {{ partial "widgets/tags.html" . }}
