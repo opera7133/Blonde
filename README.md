@@ -12,6 +12,7 @@ The demo can be seen here: https://blonde.pages.dev
 * Responsive
 * dark/light mode
 * Google Analytics
+* Yandex.Metrica
 * Pagination
 * Syntax Highlight
 * RSS feeds
