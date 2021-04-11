@@ -3,7 +3,6 @@
 /* Tailwind component classes registered by plugins*/
 @import "node_modules/tailwindcss/components";
 /* Site Specific */
-@import "assets/css/blonde";
-@import "assets/css/darker";
+@import "assets/css/site";
 /* Tailwind's utility classes - generated based on config file */
 @import "node_modules/tailwindcss/utilities";

@@ -25,6 +25,9 @@
         {{ $styles := $styles| minify | fingerprint | resources.PostProcess }}
         <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
     {{ end }}
+    <link id="dark-mode-theme" rel="stylesheet" href="{{ "css/darker.min.css" | relURL }}" async disabled>
+    <link href="{{ "/css/blonde.min.css" | relURL }}" rel="stylesheet" type="text/css" media="print"
+        onload="this.media='all'">
     {{ partial "seo/print.html" . }}
     {{ block "header_css" . }}{{ end }}
     <link rel="stylesheet" href="{{ "/css/custom.css" | relURL }}">
