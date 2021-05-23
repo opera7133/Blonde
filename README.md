@@ -18,7 +18,7 @@ The demo can be seen here: https://blonde.pages.dev
 * RSS feeds
 * Support tags and categories and archives
 * Disqus
-* [100/100 Google Lighthouse speed score](https://siasky.net/vAKRFcFHfBIWyEH-Apn0KEADKPnK_wRZjEBGaTN5Yn3BSA/#performance)
+* [100/100 Google Lighthouse speed score](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fblonde.pages.dev)
 
 ## Prerequisites
 
