@@ -36,7 +36,7 @@ tagsLimit = 20
     # See the Tailwind CSS documentation to set it up.
     # Recommended settings are h-32 to h-48.
     # https://tailwindcss.com/docs/height
-    thumbnail_height = "h-48"
+    thumbnail_height = "h-36"
 
     # https://tailwindcss.com/docs/width
     thumbnail_width = "w-auto"
