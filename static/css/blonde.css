@@ -120,17 +120,23 @@
   font-size: 1.1em;
   letter-spacing: 0.03em;
 }
+.content h1,.content h2,.content h3,.content h4,.content h5,.content h6 {
+  margin: 3em 0 .25em;
+}
+.content h1+h2, .content h2+h3, .content h3+h4, .content h4+h5, .content h5+h6, .content h2+h4, .content h3+h5, .content h4+h6 {
+  margin-top: 1em;
+}
 .content h1 {
   font-size: 2.25rem;
 }
 .content h2 {
-  font-size: 1.4em;
   padding-top: 0.55em;
   padding-bottom: 0.5em;
   padding-left: 0.5em;
   background-color: #f6f6f6;
-  border-left: 4px solid #222;
-  font-weight: 700;
+  border-left: 4px solid #222222;
+  font-weight: bold;
+  font-size: 1.4em;
 }
 .content h3 {
   font-size: 1.5rem;

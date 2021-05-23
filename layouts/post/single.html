@@ -20,9 +20,9 @@
             </div>
         </aside>
         {{ if .Params.image }}
-        <img class="my-4" src="{{ .Params.image | absURL }}">
+        <img class="py-4" src="{{ .Params.image | absURL }}">
         {{ end }}
-        <div class="content">{{.Content}}</div>
+        <div class="content mt-5">{{.Content}}</div>
         <hr class="py-2">
         <aside id="meta">
             {{ with .Params.categories }}
@@ -39,16 +39,18 @@
                 <div class="col-span-1">
                     {{ with .PrevInSection }}
                     <a class="previous lg:text-2xl" href="{{.Permalink}}">
-                        <div class="bg-gray-200 h-auto m-3 text-center py-3 lg:py-1">
-                            &lt; {{.Title}}
+                        <div
+                            class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                            <span class="icon-keyboard_arrow_left"></span> {{.Title}}
                         </div>
                     </a>
                     {{ end }}
                 </div>
                 {{ with .NextInSection }}
                 <a class="next lg:text-2xl" href="{{.Permalink}}">
-                    <div class="col-span-1 bg-gray-200 h-auto m-3 text-center py-3 lg:py-1">
-                        {{.Title}} &gt;
+                    <div
+                        class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                        {{.Title}} <span class="icon-keyboard_arrow_right"></span>
                     </div>
                 </a>
                 {{ end }}

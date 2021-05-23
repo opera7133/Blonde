@@ -27,6 +27,12 @@ archive_dropdown = "false"
 tagsLimit = 20
 
   [params.post]
+    # Show thumbnails
+    thumbnail = true
+
+    # Disable the "NO IMAGE" image.
+    noimage = true
+
     # See the Tailwind CSS documentation to set it up.
     # Recommended settings are h-32 to h-48.
     # https://tailwindcss.com/docs/height
@@ -35,12 +41,15 @@ tagsLimit = 20
     # https://tailwindcss.com/docs/width
     thumbnail_width = "w-auto"
 
+    # Number of characters in description
+    description = "130"
+
   [params.widgets]
     archives = true
     categories = true
     tags = true
-    recentposts = false
-    search = false
+    recentposts = true
+    search = true
 
 # If you're using Yandex.Metrica, you can enable this feature.
 #[params.analytics.yandexmetrica]
