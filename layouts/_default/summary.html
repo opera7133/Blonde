@@ -1,4 +1,4 @@
-<div class="bg-white w-full p-3 lg:max-w-full lg:flex mt-5 hover4">
+<div class="bg-white w-full p-3 lg:max-w-full lg:flex mt-5 hover4 dark:bg-warmgray-900">
     {{if .Site.Params.post.thumbnail }}
     {{ if .Params.image }}
     <img alt="thumbnail" id="thumb" class="lg:{{ .Site.Params.post.thumbnail_width }} lg:{{ .Site.Params.post.thumbnail_height }}" src="{{ .Params.image | relURL }}" />
@@ -8,10 +8,10 @@
     {{ end }}
     {{ end }}
     {{ end }}
-    <div class="bg-white relative pl-4 p-2 justify-between leading-normal max-w-full w-full">
-            <div class="text-gray-900 font-bold text-xl mb-2">{{.Title}}</div>
-            <p class="text-gray-700 text-base pb-5">{{ substr .Summary 0 130 | plainify }}...</p>
-            <p class="text-sm text-gray-600 absolute items-center right-0 bottom-0">
+    <div class="relative pl-4 p-2 justify-between leading-normal max-w-full w-full">
+            <div class="text-gray-900 font-bold text-xl mb-2 dark:text-white">{{.Title}}</div>
+            <p class="text-gray-700 text-base pb-5 dark:text-gray-300">{{ substr .Summary 0 130 | plainify }}...</p>
+            <p class="text-sm text-gray-600 absolute items-center right-0 bottom-0 dark:text-gray-400">
                 <time><span class="icon-access_time mr-1"></span>{{.Date.Format "2006/01/02"}}</time>
             </p>
     </div>

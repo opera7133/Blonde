@@ -2,18 +2,16 @@
     <div class="container max-w-screen-xl mr-auto ml-auto">
         <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-6">
             <div class="flex items-center flex-no-shrink bg-gray-800 text-white mr-6">
-                <a href="{{ .Site.BaseURL }}"><span
-                        class="font-semibold text-2xl tracking-tight">{{ .Site.Title }}</span></a>
+                <a href="{{ .Site.BaseURL }}"><span class="font-semibold text-2xl tracking-tight">{{ .Site.Title }}</span></a>
             </div>
             <div class="flex md:hidden">
                 <div class="py-2">
-                    <a id="dark-mode-toggle-1" href="javascript:void(0);" class="no-underline text-white mr-2"><span
-                            id="dark-mode-toggle-icon1"
-                            class="icon-moon inline-flex align-middle leading-normal text-lg mr-2" aria-label="Darkmode Toggle Button"></span></a>
+                    <button onclick="toggleDarkMode()" class="focus:outline-none mr-1"><i id="icon"
+                            class="icon-moon inline-flex align-middle leading-normal text-lg text-white"
+                            aria-label="Darkmode Toggle Button"></i></button>
                     <span class="text-gray-300">|</span>
                 </div>
-                <button id="hamburgerbtn"
-                    class="flex items-center px-3 py-1 text-gray-300 hover:text-white">
+                <button id="hamburgerbtn" class="flex items-center px-3 py-1 text-gray-300 hover:text-white">
                     <span class="icon-menu text-2xl" aria-label="Hamburger Button"></span>
                 </button>
             </div>
@@ -30,9 +28,8 @@
                 </div>
                 <div class="text-gray-400 invisible md:visible">
                     <span>|</span>
-                    <a id="dark-mode-toggle-2" href="javascript:void(0);" class="no-underline hover:text-white"><span
-                            id="dark-mode-toggle-icon2"
-                            class="icon-moon inline-flex align-middle leading-normal text-lg mr-2"></span></a>
+                    <button onclick="toggleDarkMode()" class="focus:outline-none"><i id="icon2"
+                            class="icon-moon inline-flex align-middle leading-normal text-lg ml-2"></i></button>
                 </div>
             </div>
         </nav>

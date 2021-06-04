@@ -138,11 +138,18 @@
   font-weight: bold;
   font-size: 1.4em;
 }
+.dark .content h2 {
+  background-color: #1d2021;
+  border-left-color: #81786a;
+}
 .content h3 {
   font-size: 1.5rem;
   padding-bottom: 0.25em;
   border-bottom: 2px solid #222;
   font-weight: 700;
+}
+.dark .content h3 {
+  border-bottom-color: #81786a;
 }
 .content h4 {
   font-size: 1.25rem;
@@ -159,6 +166,9 @@
 .content blockquote {
   background-color: #edf2f7;
   padding: 0.5rem 1rem;
+}
+.dark .content blockquote {
+  background-color: #1f2223;
 }
 .content table {
   display: table;
