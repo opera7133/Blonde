@@ -26,6 +26,10 @@ archive_dropdown = "false"
 # Number of tags to be displayed.
 tagsLimit = 20
 
+# Dark mode by default : dark
+# Light mode by default : light
+darkmode = "light"
+
   [params.post]
     # Show thumbnails
     thumbnail = true

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+{{ if eq .Site.Params.darkmode "dark" }}
+<html lang="{{ .Site.LanguageCode | default .Site.Language.Lang }}" class="dark">
+{{ else }}
 <html lang="{{ .Site.LanguageCode | default .Site.Language.Lang }}">
+{{ end }}
 {{- partial "head.html" . -}}
 
 <body class="font-sans">
