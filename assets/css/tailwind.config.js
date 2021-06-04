@@ -1,6 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+  darkMode: 'class',
   theme: {
     colors: {
       white: colors.white,
@@ -17,7 +18,6 @@ module.exports = {
       }
     }
   },
-  darkMode: 'class',
   variants: {},
   plugins: [
     require('@tailwindcss/typography'),
