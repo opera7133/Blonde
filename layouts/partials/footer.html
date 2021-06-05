@@ -20,7 +20,7 @@
         var icon = document.getElementById("icon");
         var icon2 = document.getElementById("icon2");
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        if (document.documentElement.classList.contains("dark") || localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
           icon.classList.remove("icon-moon");
           icon.classList.add("icon-sun");
           icon2.classList.remove("icon-moon");
