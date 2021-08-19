@@ -6,13 +6,15 @@
         href="{{ $.Site.BaseURL }}/archives/{{ $name | urlize | lower }}">{{ $name }} ({{ .Count }})</a>
     {{ end }}
     {{ else }}
-    <select class="text-center block py-2 px-4 duration-100 bg-white hover:bg-gray-200 text-gray-800 w-full dark:bg-warmgray-900 dark:text-gray-200 dark:hover:bg-warmgray-800"
-        name="archive" onChange="location.href=value;">
-        <option>Select Archive...</option>
-        {{ range $name, $items := .Site.Taxonomies.archives }}
-        <option value="{{ $.Site.BaseURL }}/archives/{{ $name | urlize | lower }}">{{ $name }} ({{ .Count }})
-        </option>
-        {{ end }}
-    </select>
+    <div class="mx-4">
+        <select class="text-center block mx-auto w-full py-2 px-4  duration-100 bg-white hover:bg-gray-200 text-gray-800 dark:bg-warmgray-900 dark:text-gray-200 dark:hover:bg-warmgray-800"
+            name="archive" onChange="location.href=value;">
+            <option>Select Archive...</option>
+            {{ range $name, $items := .Site.Taxonomies.archives }}
+            <option value="{{ $.Site.BaseURL }}/archives/{{ $name | urlize | lower }}">{{ $name }} ({{ .Count }})
+            </option>
+            {{ end }}
+        </select>
+    </div>
     {{ end }}
 </div>
