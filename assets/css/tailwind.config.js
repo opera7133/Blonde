@@ -4,9 +4,15 @@ module.exports = {
   darkMode: 'class',
   theme: {
     colors: {
+      black: colors.black,
       white: colors.white,
       gray: colors.coolGray,
+      indigo: colors.indigo,
+      red: colors.red,
       blue: colors.blue,
+      yellow: colors.amber,
+      green: colors.emerald,
+      pink: colors.pink,
     },
     extend: {
       colors: {

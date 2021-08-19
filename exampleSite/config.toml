@@ -17,6 +17,10 @@ enableRobotsTXT = true
 #disqusShortname = ""
 
 [params]
+# Base color of the website.
+# https://tailwindcss.com/docs/background-color
+base_color = "bg-gray-800"
+
 # The number of articles to be displayed on a single page.
 paginator_pages = "5"
 
@@ -49,11 +53,11 @@ darkmode = "light"
     description = "130"
 
   [params.widgets]
-    archives = true
-    categories = true
-    tags = true
-    recentposts = true
-    search = true
+    # Display widgets
+    display = false
+
+    # Order of widgets to display
+    widgets = ["archive", "archive", "category", "tags", "recent"]
 
 # If you're using Yandex.Metrica, you can enable this feature.
 #[params.analytics.yandexmetrica]

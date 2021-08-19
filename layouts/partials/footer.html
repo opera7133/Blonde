@@ -1,10 +1,10 @@
-<footer class="bg-gray-800 text-white p-6">
+<footer class="{{ .Site.Params.base_color }} text-white p-6">
     {{ if .Site.Menus.foot }}
     <div class="flex justify-center w-full md:flex md:flex-row sm:items-center sm:w-auto mb-4">
         <div>
             {{ range .Site.Menus.foot }}
             <a href="{{ .URL }}"
-                class="no-underline block sm:inline-block text-gray-400 hover:text-white">
+                class="no-underline block sm:inline-block duration-200 text-white hover:opacity-50">
                 {{ .Name }}
             </a>
             {{ end }}
@@ -12,9 +12,9 @@
     </div>
     {{ end }}
     <div class="container max-w-screen-xl mr-auto ml-auto">
-        <p>&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}" class="hover:text-gray-500">{{ .Site.Title }}</a></p>
-        <p>Powered by <a href="https://gohugo.io/" class="hover:text-gray-500">Hugo</a>, Theme <a
-                href="https://github.com/opera7133/Blonde" class="hover:text-gray-500">Blonde</a>.</p>
+        <p>&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}" class="duration-200 hover:opacity-50">{{ .Site.Title }}</a></p>
+        <p>Powered by <a href="https://gohugo.io/" class="duration-200 hover:opacity-50">Hugo</a>, Theme <a
+                href="https://github.com/opera7133/Blonde" class="duration-200 hover:opacity-50">Blonde</a>.</p>
     </div>
     <script>
         var icon = document.getElementById("icon");

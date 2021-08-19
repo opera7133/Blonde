@@ -1,4 +1,4 @@
-<div class="bg-white w-full p-3 lg:max-w-full lg:flex mt-5 hover4 dark:bg-warmgray-900">
+<div class="bg-white w-full p-3 lg:max-w-full lg:flex mt-5 transform hover:-translate-y-1 hover:shadow-md duration-500 dark:bg-warmgray-900">
     {{ if .Site.Params.post.thumbnail }}
     {{ if .Params.image }}
     <img alt="thumbnail" id="thumb" class="lg:{{ .Site.Params.post.thumbnail_width }} lg:{{ .Site.Params.post.thumbnail_height }}" src="{{ .Params.image | relURL }}" />

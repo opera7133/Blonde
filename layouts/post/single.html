@@ -2,39 +2,49 @@
 
 {{ define "main" }}
 <div class="grid grid-cols-3 gap-4">
-    <div class="bg-white col-span-3 lg:col-span-2 p-5 dark:bg-warmgray-900 dark:text-white">
-        <h1 class="title text-4xl">{{.Title}}</h1>
-        <aside id="meta">
-            <div>
-                <section>
-                    <h4 id="date"><span class="icon-access_time mr-1"></span>{{ .Date.Format "2006/01/02" }} </h4>
-                </section>
-                {{ with .Params.tags }}
-                <div id="tags">
-                    <span class="icon-local_offer mr-1"></span>
+    {{ if .Site.Params.widgets.display }}
+    <div class="col-span-3 lg:col-span-2 dark:text-white">
+    {{ else }}
+    <div class="col-span-3 dark:text-white">
+    {{ end }}
+        <div class="bg-white dark:bg-warmgray-900 p-5 my-4">
+            <h1 class="title text-4xl">{{.Title}}</h1>
+            <hr class="my-2">
+            <aside id="meta">
+                <div>
+                    <section>
+                        <h4 id="date"><span class="icon-access_time mr-2"></span>{{ .Date.Format "2006/01/02" }} </h4>
+                    </section>
+                    {{ with .Params.tags }}
+                    <div id="tags">
+                        <span class="icon-local_offer mr-1"></span>
+                        {{ range . }}
+                        <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a> |
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+            </aside>
+            <hr class="my-2">
+            {{ if .Params.image }}
+            <img class="py-4" src="{{ .Params.image | absURL }}">
+            {{ end }}
+            <div class="content mt-5">{{.Content}}</div>
+            <aside id="meta">
+                {{ with .Params.categories }}
+                <hr class="py-2">
+                <div id="categories">
+                    <span class="icon-folder text-xl mr-1"></span>
                     {{ range . }}
-                    <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a> |
+                    <span
+                        class="inline-flex py-2 leading-4 mr-2 mb-2 content-center bg-gray-200 justify-center h-8 px-3 text-blue-500 duration-200 hover:text-black dark:bg-warmgray-800"><a
+                            href="{{ "categories" | absURL}}/{{ . | urlize }}">{{ . }}</a></span>
                     {{ end }}
                 </div>
                 {{ end }}
+            </aside>
             </div>
-        </aside>
-        {{ if .Params.image }}
-        <img class="py-4" src="{{ .Params.image | absURL }}">
-        {{ end }}
-        <div class="content mt-5">{{.Content}}</div>
-        <hr class="py-2">
-        <aside id="meta">
-            {{ with .Params.categories }}
-            <div id="categories">
-                <span class="icon-folder text-xl mr-1"></span>
-                {{ range . }}
-                <span
-                    class="inline-flex py-2 leading-4 mr-2 mb-2 content-center bg-gray-200 justify-center h-8 px-3 text-blue-500 hover:text-black dark:bg-warmgray-800"><a
-                        href="{{ "categories" | absURL}}/{{ . | urlize }}">{{ . }}</a></span>
-                {{ end }}
-            </div>
-            {{ end }}
+        <div class="bg-white dark:bg-warmgray-900 p-5 my-4">
             <div class="grid grid-cols-2">
                 <div class="col-span-1">
                     {{ with .PrevInSection }}
@@ -55,12 +65,14 @@
                 </a>
                 {{ end }}
             </div>
-        </aside>
-        <hr class="py-2">
-        <div class="mb-3">
-            {{ template "_internal/disqus.html" . }}
+        </div>
+        <div class="bg-white dark:bg-warmgray-900 p-5 my-4">
+            <div class="mb-3">
+                {{ template "_internal/disqus.html" . }}
+            </div>
         </div>
     </div>
+    {{ if .Site.Params.widgets.display }}
     <div class="hidden lg:block lg:col-span-1">
         {{ partial "widgets/search.html" . }}
         {{ partial "widgets/archive.html" . }}
@@ -68,5 +80,6 @@
         {{ partial "widgets/tags.html" . }}
         {{ partial "widgets/recent.html" . }}
     </div>
+    {{ end }}
 </div>
 {{ end }}

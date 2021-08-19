@@ -1,16 +1,16 @@
-<div class="bg-gray-800">
+<div class="{{ .Site.Params.base_color }}">
     <div class="container max-w-screen-xl mr-auto ml-auto">
-        <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-6">
-            <div class="flex items-center flex-no-shrink bg-gray-800 text-white mr-6">
+        <nav class="flex items-center justify-between flex-wrap {{ .Site.Params.base_color }} p-6">
+            <div class="flex items-center flex-no-shrink {{ .Site.Params.base_color }} text-white mr-6">
                 <a href="{{ .Site.BaseURL }}"><span class="font-semibold text-2xl tracking-tight">{{ .Site.Title }}</span></a>
             </div>
             <div class="flex md:hidden">
                 <div class="py-2">
                     <button onclick="toggleDarkMode()" class="focus:outline-none mr-1" aria-label="Darkmode Toggle Button"><i id="icon"
                             class="icon-moon inline-flex align-middle leading-normal text-lg text-white"></i></button>
-                    <span class="text-gray-300">|</span>
+                    <span class="text-white">|</span>
                 </div>
-                <button id="hamburgerbtn" class="flex items-center px-3 py-1 text-gray-300 hover:text-white" aria-label="Hamburger Button">
+                <button id="hamburgerbtn" class="flex items-center px-3 py-1 text-white hover:opacity-50" aria-label="Hamburger Button">
                     <span class="icon-menu text-2xl"></span>
                 </button>
             </div>
@@ -20,15 +20,15 @@
                 <div class="navmenu">
                     {{ range .Site.Menus.main }}
                     <a href="{{ .URL }}"
-                        class="no-underline block mt-4 sm:inline-block sm:mt-0 text-gray-400 hover:text-white mr-4">
+                        class="no-underline duration-200 block mt-4 sm:inline-block sm:mt-0 text-white hover:opacity-50 mr-4">
                         {{ .Name }}
                     </a>
                     {{ end }}
                 </div>
-                <div class="text-gray-400 invisible md:visible">
+                <div class="text-white invisible md:visible">
                     <span>|</span>
                     <button onclick="toggleDarkMode()" class="focus:outline-none" aria-label="Darkmode Toggle Button"><i id="icon2"
-                            class="icon-moon inline-flex align-middle leading-normal text-lg ml-2"></i></button>
+                            class="icon-moon hover:opacity-50 duration-200 inline-flex align-middle leading-normal text-lg ml-2"></i></button>
                 </div>
             </div>
         </nav>
