@@ -54,7 +54,7 @@ darkmode = "light"
 
   [params.widgets]
     # Display widgets
-    display = false
+    display = true
 
     # Order of widgets to display
     widgets = ["search", "archive", "category", "tags", "recent"]
