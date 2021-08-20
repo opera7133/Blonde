@@ -19,9 +19,7 @@
             <li class="page-item"><a href="{{ .URL }}" class="mx-2 py-3 px-5 rounded-full relative block border-white border-0 duration-100 bg-white text-blue-600 hover:bg-gray-400 hover:text-blue-700 dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700">{{ .PageNumber }}</a></li>
             {{ else if eq ($.Scratch.Get "dot_rendered") false }} <!-- render skip pages -->
             {{ $.Scratch.Set "dot_rendered" true }}
-            <li class="page-item disabled"><a class="mx-2 py-3 px-5 rounded-full relative block border-white border-0 cursor-auto Class
-                Properties
-                pointer-events-none">...</a></li>
+            <li class="page-item disabled"><a class="mx-2 py-3 px-5 rounded-full relative block border-white border-0 cursor-auto pointer-events-none">...</a></li>
             {{ end }}
         {{ end }}
 
