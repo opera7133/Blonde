@@ -10,9 +10,10 @@ The demo can be seen here: https://blonde.pages.dev
 
 ## Features
 * Responsive
-* dark/light mode
+* Dark/Light mode
 * Google Analytics
 * Yandex.Metrica
+* Widgets
 * Pagination
 * Syntax Highlight
 * RSS feeds
