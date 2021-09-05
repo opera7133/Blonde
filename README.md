@@ -31,10 +31,23 @@ $ npm install -g autoprefixer
 ```
 
 ## Installation
+
+### Method 1
+Inside the folder of your Hugo site run:
+
+```bash
+$ git clone https://github.com/opera7133/Blonde themes/Blonde
+```
+
+### Method 2
 Inside the folder of your Hugo site run:
 
 ```bash
 $ git submodule add https://github.com/opera7133/Blonde.git themes/Blonde
+```
+
+### Install dependencies
+```bash
 $ cd themes/Blonde
 $ npm install
 ```
