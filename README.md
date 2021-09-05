@@ -39,11 +39,22 @@ Inside the folder of your Hugo site run:
 $ git clone https://github.com/opera7133/Blonde themes/Blonde
 ```
 
+Updating theme:
+```bash
+$ cd themes/Blonde
+$ git pull
+```
+
 ### Method 2
 Inside the folder of your Hugo site run:
 
 ```bash
 $ git submodule add https://github.com/opera7133/Blonde.git themes/Blonde
+```
+
+Updating theme:
+```bash
+$ git submodule update --remote --merge
 ```
 
 ### Install dependencies
@@ -66,13 +77,6 @@ In order to see your site in action, run Hugo's built-in local server.
 $ hugo server
 ```
 Now enter `localhost:1313` in the address bar of your browser.
-
-### Update the theme
-Inside the folder of your Hugo site run:
-
-```bash
-$ git submodule update --remote --merge
-```
 
 ## Contributing
 If you find a bug or have an idea for a feature, feel free to write an [issue](https://github.com/opera7133/Blonde/issues) or make a PR.
