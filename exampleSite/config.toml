@@ -21,6 +21,9 @@ enableRobotsTXT = true
 # https://tailwindcss.com/docs/background-color
 base_color = "bg-gray-800"
 
+#Site description
+description = "Blonde theme for Hugo."
+
 # The number of articles to be displayed on a single page.
 paginator_pages = "5"
 
