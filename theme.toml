@@ -9,7 +9,6 @@ demosite = "https://blonde.pages.dev"
 
 tags = ["blog", "minimal", "light", "dark", "simple", "clean", "tailwindcss", "personal", "responsive"]
 features = ["blog"]
-min_version = "0.69"
 
 [author]
   name = "wamo"
