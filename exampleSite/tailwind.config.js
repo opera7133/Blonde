@@ -1,12 +1,13 @@
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 
 module.exports = {
-  darkMode: 'class',
+  content: ["./**/*.html"],
+  darkMode: "class",
   theme: {
     colors: {
       black: colors.black,
       white: colors.white,
-      gray: colors.coolGray,
+      gray: colors.gray,
       indigo: colors.indigo,
       red: colors.red,
       blue: colors.blue,
@@ -17,15 +18,13 @@ module.exports = {
     extend: {
       colors: {
         warmgray: {
-          700: '#2f3335',
-          800: '#1e2022',
-          900: '#181a1b',
+          700: "#2f3335",
+          800: "#1e2022",
+          900: "#181a1b",
         },
-      }
-    }
+      },
+    },
   },
   variants: {},
-  plugins: [
-    require('@tailwindcss/typography'),
-  ]
-}
+  plugins: [require("@tailwindcss/typography")],
+};
