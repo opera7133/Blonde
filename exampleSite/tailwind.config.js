@@ -1,20 +1,7 @@
-const colors = require("tailwindcss/colors");
-
 module.exports = {
-  content: ["./**/*.html"],
+  content: ["./**/*.html", "config.toml"],
   darkMode: "class",
   theme: {
-    colors: {
-      black: colors.black,
-      white: colors.white,
-      gray: colors.gray,
-      indigo: colors.indigo,
-      red: colors.red,
-      blue: colors.blue,
-      yellow: colors.amber,
-      green: colors.emerald,
-      pink: colors.pink,
-    },
     extend: {
       colors: {
         warmgray: {

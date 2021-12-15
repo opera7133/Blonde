@@ -1,18 +1,24 @@
-<div class="bg-white w-full p-3 lg:max-w-full lg:flex mt-5 transform hover:-translate-y-1 hover:shadow-md duration-500 dark:bg-warmgray-900">
+<div
+    class="bg-white w-full p-3 lg:max-w-full lg:flex mt-5 transform hover:-translate-y-1 hover:shadow-md duration-500 dark:bg-warmgray-900">
     {{ if .Site.Params.post.thumbnail }}
     {{ if .Params.image }}
-    <img alt="thumbnail" id="thumb" class="lg:{{ .Site.Params.post.thumbnail_width }} lg:{{ .Site.Params.post.thumbnail_height }}" src="{{ .Params.image | relURL }}" />
+    <img alt="thumbnail" id="thumb"
+        class="{{ .Site.Params.post.thumbnail_width }} {{ .Site.Params.post.thumbnail_height }}"
+        src="{{ .Params.image | relURL }}" />
     {{ else }}
     {{ if .Site.Params.post.noimage }}
-    <img alt="thumbnail" id="thumb" class="lg:{{ .Site.Params.post.thumbnail_width }} lg:{{ .Site.Params.post.thumbnail_height }}" src="{{ "/img/default.jpg" | relURL }}">
+    <img alt="thumbnail" id="thumb"
+        class="{{ .Site.Params.post.thumbnail_width }} {{ .Site.Params.post.thumbnail_height }}"
+        src='{{ "/img/default.jpg" | relURL }}'>
     {{ end }}
     {{ end }}
     {{ end }}
     <div class="relative pl-4 p-2 justify-between leading-normal max-w-full w-full">
-            <div class="text-gray-900 font-bold text-xl mb-2 dark:text-white">{{ .Title }}</div>
-            <p class="text-gray-700 text-base pb-5 dark:text-gray-300">{{ substr .Summary 0 130 | plainify | htmlUnescape }}...</p>
-            <p class="text-sm text-gray-600 absolute items-center right-0 bottom-0 dark:text-gray-400">
-                <time><span class="icon-access_time mr-1"></span>{{ .Date.Format "2006/01/02" }}</time>
-            </p>
+        <div class="text-gray-900 font-bold text-xl mb-2 dark:text-white">{{ .Title }}</div>
+        <p class="text-gray-700 text-base pb-5 dark:text-gray-300">{{ substr .Summary 0 130 | plainify | htmlUnescape
+            }}...</p>
+        <p class="text-sm text-gray-600 absolute items-center right-0 bottom-0 dark:text-gray-400">
+            <time><span class="icon-access_time mr-1"></span>{{ .Date.Format "2006/01/02" }}</time>
+        </p>
     </div>
 </div>
