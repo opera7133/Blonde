@@ -1,5 +1,5 @@
 <div class="bg-white panel mb-3 pb-5 dark:bg-warmgray-900">
-    <p class="text-xl text-center text-gray-700 py-3 px-3 dark:text-gray-300">Archives</p>
+    <p class="text-xl text-center text-gray-700 py-3 px-3 dark:text-gray-300 font-bold">Archives</p>
     {{ if eq .Site.Params.archive_dropdown "false" }}
     {{ range $name, $items := .Site.Taxonomies.archives }}
     <a class="text-center block duration-100 py-2 px-4 mx-4 hover:bg-gray-100 text-gray-800 dark:text-gray-200 dark:hover:bg-warmgray-800"
@@ -7,7 +7,8 @@
     {{ end }}
     {{ else }}
     <div class="mx-4">
-        <select class="text-center block mx-auto w-full py-2 px-4  duration-100 bg-white hover:bg-gray-200 text-gray-800 dark:bg-warmgray-900 dark:text-gray-200 dark:hover:bg-warmgray-800"
+        <select
+            class="text-center block mx-auto w-full py-2 px-4  duration-100 bg-white hover:bg-gray-200 text-gray-800 dark:bg-warmgray-900 dark:text-gray-200 dark:hover:bg-warmgray-800"
             name="archive" onChange="location.href=value;">
             <option>Select Archive...</option>
             {{ range $name, $items := .Site.Taxonomies.archives }}

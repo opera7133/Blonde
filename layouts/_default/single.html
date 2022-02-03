@@ -4,20 +4,20 @@
 <div class="grid grid-cols-3 gap-4">
     {{ if .Site.Params.widgets.display }}
     <div class="bg-white col-span-3 lg:col-span-2 p-5 dark:bg-warmgray-900 dark:text-white">
-    {{ else }}
-    <div class="bg-white col-span-3 p-5 dark:bg-warmgray-900 dark:text-white">
-    {{ end }}
-        <h1 class="title text-4xl">{{.Title}}</h1>
-        <div class="content py-1">{{.Content}}</div>
+        {{ else }}
+        <div class="bg-white col-span-3 p-5 dark:bg-warmgray-900 dark:text-white">
+            {{ end }}
+            <h1 class="title text-4xl font-bold mb-2">{{.Title}}</h1>
+            <div class="content prose md:prose-lg lg:prose-xl max-w-none dark:prose-invert py-1">{{.Content}}</div>
+        </div>
+        {{ if .Site.Params.widgets.display }}
+        <div class="hidden lg:block lg:col-span-1">
+            {{ partial "widgets/search.html" . }}
+            {{ partial "widgets/archive.html" . }}
+            {{ partial "widgets/category.html" . }}
+            {{ partial "widgets/tags.html" . }}
+            {{ partial "widgets/recent.html" . }}
+        </div>
+        {{ end }}
     </div>
-    {{ if .Site.Params.widgets.display }}
-    <div class="hidden lg:block lg:col-span-1">
-        {{ partial "widgets/search.html" . }}
-        {{ partial "widgets/archive.html" . }}
-        {{ partial "widgets/category.html" . }}
-        {{ partial "widgets/tags.html" . }}
-        {{ partial "widgets/recent.html" . }}
-    </div>
     {{ end }}
-</div>
-{{ end }}
