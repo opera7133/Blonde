@@ -2,83 +2,97 @@
 
 {{ define "main" }}
 <div class="grid grid-cols-3 gap-4">
-    {{ if .Site.Params.widgets.display }}
-    <div class="col-span-3 lg:col-span-2 dark:text-white">
-        {{ else }}
-        <div class="col-span-3 dark:text-white">
+  {{ if .Site.Params.widgets.display }}
+  <div class="col-span-3 lg:col-span-2 dark:text-white">
+    {{ else }}
+    <div class="col-span-3 dark:text-white">
+      {{ end }}
+      <div class="bg-white dark:bg-warmgray-900 p-5 my-4">
+        <h1 class="mb-2 text-4xl font-bold">{{.Title}}</h1>
+        <aside id="meta">
+          <div>
+            <section>
+              <h4 id="date"><span class="icon-access_time mr-2"></span>{{ .Date.Format "2006/01/02" }}
+              </h4>
+            </section>
+            {{ with .Params.tags }}
+            <div id="tags">
+              <span class="icon-local_offer mr-1"></span>
+              {{ range . }}
+              <a href='{{ "tags" | absURL }}/{{ . | urlize }}'>{{ . }}</a> |
+              {{ end }}
+            </div>
             {{ end }}
-            <div class="bg-white dark:bg-warmgray-900 p-5 my-4">
-                <h1 class="mb-2 text-4xl font-bold">{{.Title}}</h1>
-                <aside id="meta">
-                    <div>
-                        <section>
-                            <h4 id="date"><span class="icon-access_time mr-2"></span>{{ .Date.Format "2006/01/02" }}
-                            </h4>
-                        </section>
-                        {{ with .Params.tags }}
-                        <div id="tags">
-                            <span class="icon-local_offer mr-1"></span>
-                            {{ range . }}
-                            <a href='{{ "tags" | absURL }}/{{ . | urlize }}'>{{ . }}</a> |
-                            {{ end }}
-                        </div>
-                        {{ end }}
-                    </div>
-                </aside>
-                {{ if .Params.image }}
-                <img class="py-4" src="{{ .Params.image | absURL }}">
-                {{ end }}
-                <div class="prose md:prose-lg lg:prose-xl max-w-none dark:prose-invert mt-5">{{.Content}}</div>
-                <aside id="meta">
-                    {{ with .Params.categories }}
-                    <hr class="py-2">
-                    <div id="categories">
-                        <span class="icon-folder text-xl mr-1"></span>
-                        {{ range . }}
-                        <span
-                            class="inline-flex py-2 leading-4 mr-2 mb-2 content-center bg-gray-200 justify-center h-8 px-3 text-blue-500 duration-200 hover:text-black dark:bg-warmgray-800"><a
-                                href='{{ "categories" | absURL}}/{{ . | urlize }}'>{{ . }}</a></span>
-                        {{ end }}
-                    </div>
-                    {{ end }}
-                </aside>
-            </div>
-            <div class="bg-white dark:bg-warmgray-900 p-5 my-4">
-                <div class="grid grid-cols-2">
-                    <div class="col-span-1">
-                        {{ with .PrevInSection }}
-                        <a class="previous lg:text-2xl" href="{{.Permalink}}">
-                            <div
-                                class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
-                                <span class="icon-keyboard_arrow_left"></span> {{.Title}}
-                            </div>
-                        </a>
-                        {{ end }}
-                    </div>
-                    {{ with .NextInSection }}
-                    <a class="next lg:text-2xl" href="{{.Permalink}}">
-                        <div
-                            class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
-                            {{.Title}} <span class="icon-keyboard_arrow_right"></span>
-                        </div>
-                    </a>
-                    {{ end }}
-                </div>
-            </div>
-            <div class="bg-white dark:bg-warmgray-900 p-5 my-4">
-                <div class="mb-3">
-                    {{ template "_internal/disqus.html" . }}
-                </div>
-            </div>
-        </div>
-        {{ if .Site.Params.widgets.display }}
-        <div class="hidden lg:block lg:col-span-1">
-            {{ partial "widgets/search.html" . }}
-            {{ partial "widgets/archive.html" . }}
-            {{ partial "widgets/category.html" . }}
-            {{ partial "widgets/tags.html" . }}
-            {{ partial "widgets/recent.html" . }}
-        </div>
+          </div>
+        </aside>
+        {{ if .Params.image }}
+        <img class="py-4" src="{{ .Params.image | absURL }}">
         {{ end }}
+        {{ if and (and (.Site.Params.ad.googleAdSense) (.Site.Params.ad.postTop)) (.Site.Params.ad.adslot) }}
+        <ins class="adsbygoogle" style="display:block" data-ad-client="{{.Site.Params.ad.googleAdSense}}"
+          data-ad-slot="{{.Site.Params.ad.adslot}}" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        {{ end }}
+        <div class="prose md:prose-lg lg:prose-xl max-w-none dark:prose-invert mt-5">{{.Content}}</div>
+        {{ if and (and (.Site.Params.ad.googleAdSense) (.Site.Params.ad.postBottom)) (.Site.Params.ad.adslot) }}
+        <ins class="adsbygoogle" style="display:block" data-ad-client="{{.Site.Params.ad.googleAdSense}}"
+          data-ad-slot="{{.Site.Params.ad.adslot}}" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        {{ end }}
+        <aside id="meta">
+          {{ with .Params.categories }}
+          <hr class="py-2">
+          <div id="categories">
+            <span class="icon-folder text-xl mr-1"></span>
+            {{ range . }}
+            <span
+              class="inline-flex py-2 leading-4 mr-2 mb-2 content-center bg-gray-200 justify-center h-8 px-3 text-blue-500 duration-200 hover:text-black dark:bg-warmgray-800"><a
+                href='{{ "categories" | absURL}}/{{ . | urlize }}'>{{ . }}</a></span>
+            {{ end }}
+          </div>
+          {{ end }}
+        </aside>
+      </div>
+      <div class="bg-white dark:bg-warmgray-900 p-5 my-4">
+        <div class="grid grid-cols-2">
+          <div class="col-span-1">
+            {{ with .PrevInSection }}
+            <a class="previous lg:text-2xl" href="{{.Permalink}}">
+              <div
+                class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                <span class="icon-keyboard_arrow_left"></span> {{.Title}}
+              </div>
+            </a>
+            {{ end }}
+          </div>
+          {{ with .NextInSection }}
+          <a class="next lg:text-2xl" href="{{.Permalink}}">
+            <div
+              class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+              {{.Title}} <span class="icon-keyboard_arrow_right"></span>
+            </div>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+      <div class="bg-white dark:bg-warmgray-900 p-5 my-4">
+        <div class="mb-3">
+          {{ template "_internal/disqus.html" . }}
+        </div>
+      </div>
+    </div>
+    {{ if .Site.Params.widgets.display }}
+    <div class="hidden lg:block lg:col-span-1">
+      {{ partial "widgets/search.html" . }}
+      {{ partial "widgets/archive.html" . }}
+      {{ partial "widgets/category.html" . }}
+      {{ partial "widgets/tags.html" . }}
+      {{ partial "widgets/recent.html" . }}
     </div>
     {{ end }}
+  </div>
+  {{ end }}

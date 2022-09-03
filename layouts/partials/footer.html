@@ -1,50 +1,88 @@
 <footer class="{{ .Site.Params.base_color }} text-white p-6">
-    {{ if .Site.Menus.foot }}
-    <div class="flex justify-center w-full md:flex md:flex-row sm:items-center sm:w-auto mb-4">
-        <div>
-            {{ range .Site.Menus.foot }}
-            <a href="{{ .URL }}"
-                class="no-underline block sm:inline-block duration-200 text-white hover:opacity-50">
-                {{ .Name }}
-            </a>
-            {{ end }}
-        </div>
+  {{ if .Site.Menus.foot }}
+  <div class="flex justify-center w-full md:flex md:flex-row sm:items-center sm:w-auto mb-4">
+    <div>
+      {{ range .Site.Menus.foot }}
+      <a href="{{ .URL }}" class="no-underline block sm:inline-block duration-200 text-white hover:opacity-50">
+        {{ .Name }}
+      </a>
+      {{ end }}
     </div>
-    {{ end }}
-    <div class="container max-w-screen-xl mr-auto ml-auto">
-        <p>&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}" class="duration-200 hover:opacity-50">{{ .Site.Title }}</a></p>
-        <p>Powered by <a href="https://gohugo.io/" class="duration-200 hover:opacity-50">Hugo</a>, Theme <a
-                href="https://github.com/opera7133/Blonde" class="duration-200 hover:opacity-50">Blonde</a>.</p>
-    </div>
-    <script>
-        var icon = document.getElementById("icon");
-        var icon2 = document.getElementById("icon2");
-        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-        if (document.documentElement.classList.contains("dark") || localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          icon.classList.remove("icon-moon");
-          icon.classList.add("icon-sun");
-          icon2.classList.remove("icon-moon");
-          icon2.classList.add("icon-sun");
-          document.documentElement.classList.add('dark')
-        } else {
-          document.documentElement.classList.remove('dark')
+  </div>
+  {{ end }}
+  <div class="container max-w-screen-xl mr-auto ml-auto">
+    <p>&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}" class="duration-200 hover:opacity-50">{{ .Site.Title }}</a>
+    </p>
+    <p>Powered by <a href="https://gohugo.io/" class="duration-200 hover:opacity-50">Hugo</a>, Theme <a
+        href="https://github.com/opera7133/Blonde" class="duration-200 hover:opacity-50">Blonde</a>.</p>
+  </div>
+  {{ if .Site.Params.ad.googleAdSense }}
+  <script>
+    (function (window, document) {
+      function main() {
+        var ad = document.createElement('script');
+        ad.async = true;
+        ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ .Site.Params.ad.googleAdSense }}';
+        ad.crossOrigin = "anonymous"
+        var sc = document.getElementsByTagName('script')[0];
+        sc.parentNode.insertBefore(ad, sc);
+      }
+
+      var lazyLoad = false;
+      function onLazyLoad() {
+        if (lazyLoad === false) {
+          lazyLoad = true;
+          window.removeEventListener('scroll', onLazyLoad);
+          window.removeEventListener('mousemove', onLazyLoad);
+          window.removeEventListener('mousedown', onLazyLoad);
+          window.removeEventListener('touchstart', onLazyLoad);
+          window.removeEventListener('keydown', onLazyLoad);
+          main();
         }
-        function toggleDarkMode() {
-        if (document.documentElement.classList.contains('dark')) {
-            icon.classList.remove("icon-sun");
-            icon.classList.add("icon-moon");
-            icon2.classList.remove("icon-sun");
-            icon2.classList.add("icon-moon");
-            document.documentElement.classList.remove('dark')
-            localStorage.theme = 'light'
-        } else {
-            icon.classList.remove("icon-moon");
-            icon.classList.add("icon-sun");
-            icon2.classList.remove("icon-moon");
-            icon2.classList.add("icon-sun");
-            document.documentElement.classList.add('dark')
-            localStorage.theme = 'dark'
+      }
+      window.addEventListener('scroll', onLazyLoad);
+      window.addEventListener('mousemove', onLazyLoad);
+      window.addEventListener('mousedown', onLazyLoad);
+      window.addEventListener('touchstart', onLazyLoad);
+      window.addEventListener('keydown', onLazyLoad);
+      window.addEventListener('load', function () {
+        if (window.pageYOffset) {
+          onLazyLoad();
+          window.setTimeout(onLazyLoad, 3000)
         }
+      });
+    })(window, document);
+  </script>
+  {{ end }}
+  <script>
+    var icon = document.getElementById("icon");
+    var icon2 = document.getElementById("icon2");
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (document.documentElement.classList.contains("dark") || localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      icon.classList.remove("icon-moon");
+      icon.classList.add("icon-sun");
+      icon2.classList.remove("icon-moon");
+      icon2.classList.add("icon-sun");
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
     }
-    </script>
+    function toggleDarkMode() {
+      if (document.documentElement.classList.contains('dark')) {
+        icon.classList.remove("icon-sun");
+        icon.classList.add("icon-moon");
+        icon2.classList.remove("icon-sun");
+        icon2.classList.add("icon-moon");
+        document.documentElement.classList.remove('dark')
+        localStorage.theme = 'light'
+      } else {
+        icon.classList.remove("icon-moon");
+        icon.classList.add("icon-sun");
+        icon2.classList.remove("icon-moon");
+        icon2.classList.add("icon-sun");
+        document.documentElement.classList.add('dark')
+        localStorage.theme = 'dark'
+      }
+    }
+  </script>
 </footer>

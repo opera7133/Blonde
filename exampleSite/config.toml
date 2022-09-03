@@ -37,6 +37,18 @@ tagsLimit = 20
 # Light mode by default : light
 darkmode = "light"
 
+  [params.ad]
+    # Google AdSense
+    # ex. ca-pub-0000000000000000
+    googleAdSense = ""
+
+    # ex. 000000000
+    adslot = ""
+
+    # Placement of ads
+    postTop = false
+    postBottom = false
+
   [params.post]
     # Show thumbnails
     thumbnail = true
