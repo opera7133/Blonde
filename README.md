@@ -13,6 +13,7 @@ The demo can be seen here: https://blonde.pages.dev
 - Responsive
 - Dark/Light mode
 - Google Analytics
+
 - Yandex.Metrica
 - Widgets
 - Pagination
