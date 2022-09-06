@@ -6,12 +6,12 @@
     <title>{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <link rel="apple-touch-icon" sizes="180x180" href='{{ "/favicon/apple-touch-icon.png" | relURL }}'>
-    <link rel="icon" type="image/png" sizes="32x32" href='{{ "/favicon/favicon-32x32.png" | relURL }}'>
-    <link rel="icon" type="image/png" sizes="16x16" href='{{ "/favicon/favicon-16x16.png" | relURL }}'>
-    <link rel="manifest" href='{{ "/favicon/site.webmanifest" | relURL }}' />
-    <link rel="mask-icon" href=' {{ "/favicon/safari-pinned-tab.svg" | relURL }}' color="#5bbad5" />
-    <link rel="shortcut icon" href='{{ "/favicon/favicon.ico" | relURL }}' />
+    <link rel="apple-touch-icon" sizes="180x180" href='{{ "favicon/apple-touch-icon.png" | relURL }}'>
+    <link rel="icon" type="image/png" sizes="32x32" href='{{ "favicon/favicon-32x32.png" | relURL }}'>
+    <link rel="icon" type="image/png" sizes="16x16" href='{{ "favicon/favicon-16x16.png" | relURL }}'>
+    <link rel="manifest" href='{{ "favicon/site.webmanifest" | relURL }}' />
+    <link rel="mask-icon" href=' {{ "favicon/safari-pinned-tab.svg" | relURL }}' color="#5bbad5" />
+    <link rel="shortcut icon" href='{{ "favicon/favicon.ico" | relURL }}' />
     <meta name="theme-color" content="#ffffff">
     <meta property="og:title" content="{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}" />
     {{ $styles := resources.Get "css/style.css" | postCSS }}
@@ -21,10 +21,10 @@
     {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
     {{ end }}
-    <link href=' {{ "/css/blonde.min.css" | relURL }}' rel="stylesheet" type="text/css" media="print"
+    <link href=' {{ "css/blonde.min.css" | relURL }}' rel="stylesheet" type="text/css" media="print"
         onload="this.media=' all'">
     {{ partial "seo/print.html" . }}
     {{ block "header_css" . }}{{ end }}
-    <link rel="stylesheet" href='{{ "/css/custom.css" | relURL }}'>
+    <link rel="stylesheet" href='{{ "css/custom.css" | relURL }}'>
     <i class="dark hidden"></i>
 </head>
