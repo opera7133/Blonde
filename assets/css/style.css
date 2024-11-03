@@ -2400,3 +2400,57 @@ video {
     line-height: 2rem;
   }
 }
+
+/* General styling for the Table of Contents in Light Mode */
+.table-of-contents {
+  border: 1px solid #ddd;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  color: #333;
+}
+
+.table-of-contents h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+.table-of-contents ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.table-of-contents li {
+  margin-bottom: 0.5em;
+}
+
+.table-of-contents a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.table-of-contents a:hover {
+  text-decoration: underline;
+}
+
+/* Dark Mode Support */
+.dark .table-of-contents {
+  background-color: #333;
+  border-color: #444;
+  color: #ddd;
+}
+
+.dark .table-of-contents h2 {
+  color: #fff;
+}
+
+.dark .table-of-contents a {
+  color: #66b3ff;
+}
+
+.dark .table-of-contents a:hover {
+  color: #fff;
+}

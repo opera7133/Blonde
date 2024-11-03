@@ -28,6 +28,12 @@
         {{ if .Params.image }}
         <img class="py-4" src="{{ .Params.image | absURL }}">
         {{ end }}
+        {{ if .TableOfContents }}
+        <nav class="table-of-contents">
+          <h2>Table of Contents</h2>
+          {{ .TableOfContents }}
+        </nav>
+      {{ end }}
         {{ if and (and (.Site.Params.ad.googleAdSense) (.Site.Params.ad.postTop)) (.Site.Params.ad.adslot) }}
         <ins class="adsbygoogle" style="display:block" data-ad-client="{{.Site.Params.ad.googleAdSense}}"
           data-ad-slot="{{.Site.Params.ad.adslot}}" data-ad-format="auto" data-full-width-responsive="true"></ins>
