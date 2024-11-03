@@ -2,20 +2,42 @@
     <div class="container max-w-screen-xl mr-auto ml-auto">
         <nav class="flex items-center justify-between flex-wrap {{ .Site.Params.base_color }} p-6">
             <div class="flex items-center flex-no-shrink {{ .Site.Params.base_color }} text-white mr-6">
-                <a href="{{ .Site.BaseURL }}"><span class="font-semibold text-2xl tracking-tight">{{ .Site.Title }}</span></a>
+                {{ if .Site.Params.logo }}
+                <a href="{{ .Site.BaseURL }}">
+                    <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }} logo"
+                        class="h-10 w-auto max-h-12 mr-2">
+                </a>
+                {{ else }}
+                <a href="{{ .Site.BaseURL }}">
+                    <span class="font-semibold text-2xl tracking-tight">{{ .Site.Title }}</span>
+                </a>
+                {{ end }}
+                <a href="{{ .Site.BaseURL }}"><span class="font-semibold text-2xl tracking-tight">{{ .Site.Title
+                        }}</span></a>
             </div>
             <div class="flex md:hidden">
                 <div class="py-2">
-                    <button onclick="toggleDarkMode()" class="focus:outline-none mr-1" aria-label="Darkmode Toggle Button"><i id="icon"
+                    <button onclick="toggleDarkMode()" class="focus:outline-none mr-1"
+                        aria-label="Darkmode Toggle Button"><i id="icon"
                             class="icon-moon inline-flex align-middle leading-normal text-lg text-white"></i></button>
                     <span class="text-white">|</span>
                 </div>
-                <button id="hamburgerbtn" class="flex items-center px-3 py-1 text-white hover:opacity-50" aria-label="Hamburger Button">
+                <button id="hamburgerbtn" class="flex items-center px-3 py-1 text-white hover:opacity-50"
+                    aria-label="Hamburger Button">
                     <span class="icon-menu text-2xl"></span>
                 </button>
             </div>
             <div class="hidden w-full md:flex md:flex-row sm:items-center md:w-auto" id="mobileMenu">
                 <div class="text-sm lg:flex-grow">
+                </div>
+                <div class="flex items-center space-x-4">
+                    
+                    <!-- Language Switcher with Flags -->
+                    {{ range $.Site.Home.AllTranslations }}
+                    <a href="{{ .Permalink }}"> <img src="{{ printf "img/flags/%s.webp" .Language.LanguageCode }}"
+                            alt="{{ .Language.LanguageName }}" class="flag-icon">
+                    </a>
+                    {{ end }}
                 </div>
                 <div class="navmenu">
                     {{ range .Site.Menus.main }}
@@ -25,9 +47,11 @@
                     </a>
                     {{ end }}
                 </div>
+
                 <div class="text-white invisible md:visible">
                     <span>|</span>
-                    <button onclick="toggleDarkMode()" class="focus-visible:outline-none" aria-label="Darkmode Toggle Button"><i id="icon2"
+                    <button onclick="toggleDarkMode()" class="focus-visible:outline-none"
+                        aria-label="Darkmode Toggle Button"><i id="icon2"
                             class="icon-moon hover:opacity-50 duration-200 inline-flex align-middle leading-normal text-lg ml-2"></i></button>
                 </div>
             </div>
