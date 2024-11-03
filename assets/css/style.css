@@ -2483,3 +2483,15 @@ video {
 #go-to-top:hover {
   background-color: #0056b3; /* Darker background on hover */
 }
+
+nav .flex-no-shrink img {
+  height: 40px;
+  width: auto;
+  max-height: 50px;
+}
+
+.flag-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
