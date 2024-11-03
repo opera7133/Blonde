@@ -28,7 +28,7 @@
         {{ if .Params.image }}
         <img class="py-4" src="{{ .Params.image | absURL }}">
         {{ end }}
-        {{ if .TableOfContents }}
+        {{ if .Site.Params.enableTableOfContents }}
         <nav class="table-of-contents">
           <h2>Table of Contents</h2>
           {{ .TableOfContents }}

@@ -21,6 +21,8 @@ enableRobotsTXT = true
 # https://tailwindcss.com/docs/background-color
 base_color = "bg-gray-800"
 
+#If you want to enable table of content at the beginning of each article
+enableTableOfContents = true
 #Site description
 description = "Blonde theme for Hugo."
 
