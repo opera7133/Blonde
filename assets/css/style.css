@@ -2454,3 +2454,32 @@ video {
 .dark .table-of-contents a:hover {
   color: #fff;
 }
+
+/* maximize the space for text*/
+.container, .main-content, .content {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 20px; /* Optional for visual comfort */
+  margin: 0;
+}
+
+/* go to the top*/
+#go-to-top {
+  position: fixed;
+  bottom: 30px; /* Distance from the bottom of the window */
+  right: 30px;  /* Distance from the right of the window */
+  background-color: #007bff; /* Button background color */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+  text-decoration: none;
+  opacity: 1; /* Change to 1 to make it visible without JS */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition */
+  z-index: 1000; /* Ensures it's above other elements */
+}
+
+#go-to-top:hover {
+  background-color: #0056b3; /* Darker background on hover */
+}
