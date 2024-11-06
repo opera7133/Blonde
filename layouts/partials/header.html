@@ -39,7 +39,7 @@
                     
                     <!-- Language Switcher with Flags -->
                     {{ range $.Site.Home.AllTranslations }}
-                    <a href="{{ .Permalink }}"> <img src="{{ printf "img/flags/%s.webp" .Language.LanguageCode }}"
+                    <a href="{{ .Permalink }}"> <img src="{{ printf "img/flags/%s.webp" .Language.LanguageCode | relURL }}"
                             alt="{{ .Language.LanguageName }}" class="flag-icon">
                     </a>
                     {{ end }}
