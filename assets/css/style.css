@@ -2495,3 +2495,62 @@ nav .flex-no-shrink img {
   width: 20px;
   margin-right: 5px;
 }
+
+.footer-container {
+  background-color: #333;        /* Example background color */
+  color: #fff;                   /* White text color */
+  padding: 20px;                 /* General padding */
+}
+
+.footer-content {
+  display: flex;                 /* Use Flexbox for horizontal alignment */
+  align-items: center;           /* Align items vertically in the center */
+  flex-wrap: wrap;               /* Wrap content on smaller screens */
+  justify-content: space-between;/* Space between columns */
+  gap: 20px;                     /* Spacing between columns */
+}
+
+.footer-left, .footer-right {
+  flex: 1;                       /* Ensure each column takes equal space */
+  min-width: 200px;              /* Maintain minimum width for columns */
+}
+
+.footer-right {
+  text-align: right;             /* Align text in the right column to the right */
+}
+
+.footer-right ul {
+  list-style-type: none;         /* Remove bullet points from the list */
+  padding: 0;                    /* Remove padding from ul */
+}
+
+.footer-right li {
+  margin-bottom: 10px;           /* Space between list items */
+}
+
+.footer-right a {
+  color: #fff;                   /* White text for links */
+  text-decoration: none;         /* Remove underline from links */
+}
+
+.footer-right a:hover {
+  text-decoration: underline;    /* Underline link on hover */
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;    /* Align logo and title vertically */
+}
+
+.header-punchline {
+  font-size: 0.875rem;    /* Same as text-sm */
+  color: #d1d5db;         /* Light gray color */
+  margin-top: 0.25rem;    /* Small space between title and punchline */
+  line-height: 1.4;       /* Improve readability */
+}
+
+@media (min-width: 768px) {
+  .header-punchline {
+      font-size: 1rem;    /* Larger text on bigger screens */
+  }
+}
