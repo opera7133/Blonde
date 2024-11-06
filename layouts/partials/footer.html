@@ -10,11 +10,22 @@
     </div>
   </div>
   {{ end }}
-  <div class="container max-w-screen-xl mr-auto ml-auto">
-    <p>&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}" class="duration-200 hover:opacity-50">{{ .Site.Title }}</a>
-    </p>
-    <p>  <p><a href="{{ .Site.BaseURL }}" class="duration-200 hover:opacity-50">{{T "punchLine"}}</a> </p>
-  </p>
+  <div class="container max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center">
+    <!-- Left Side: Site Information -->
+    <div class="footer-left mb-6 md:mb-0 md:flex-1">
+      <p>&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}" class="duration-200 hover:opacity-50">{{ .Site.Title }}</a></p>
+      <p><a href="{{ .Site.BaseURL }}" class="duration-200 hover:opacity-50">{{ T "footer_summary" }}</a></p>
+    </div>
+
+    <!-- Right Column: Quick Links -->
+    <div class="footer-right md:text-right md:flex-1">
+      <h4 class="font-bold mb-2">Quick Links</h4>
+      <ul class="list-none p-0">
+        <li><a href="{{ "about" | relURL }}" class="duration-200 hover:opacity-50">About Us</a></li>
+        <li><a href="{{ "contact" | relURL }}" class="duration-200 hover:opacity-50">Contact</a></li>
+        <li><a href="{{ "legal" | relURL }}" class="duration-200 hover:opacity-50">Legal Mentions</a></li>
+      </ul>
+    </div>
   </div>
   {{ if .Site.Params.ad.googleAdSense }}
   <script>

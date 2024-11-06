@@ -11,9 +11,14 @@
                 <a href="{{ .Site.BaseURL }}">
                     <span class="font-semibold text-2xl tracking-tight">{{ .Site.Title }}</span>
                 </a>
+                <p class="text-sm md:text-base mt-1 text-gray-300">{{ T "punchLine" }}</p>
                 {{ end }}
+                
+            </a>
+
                 <a href="{{ .Site.BaseURL }}"><span class="font-semibold text-2xl tracking-tight">{{ .Site.Title
-                        }}</span></a>
+                        }}</span><p class="text-sm md:text-base mt-1 text-gray-300">{{ T "punchLine" }}</p></a>
+                        
             </div>
             <div class="flex md:hidden">
                 <div class="py-2">
@@ -34,7 +39,7 @@
                     
                     <!-- Language Switcher with Flags -->
                     {{ range $.Site.Home.AllTranslations }}
-                    <a href="{{ .Permalink }}"> <img src="{{ printf "img/flags/%s.webp" .Language.LanguageCode  |relURL }}"
+                    <a href="{{ .Permalink }}"> <img src="{{ printf "img/flags/%s.webp" .Language.LanguageCode | relURL }}"
                             alt="{{ .Language.LanguageName }}" class="flag-icon">
                     </a>
                     {{ end }}
