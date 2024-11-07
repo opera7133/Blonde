@@ -1,5 +1,4 @@
 {{ if not hugo.IsServer }}
-{{ .Site.Params.ad.CloudflareWebAnalyticsToken }}
 {{ with .Site.Config.Services.GoogleAnalytics.ID }}
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
