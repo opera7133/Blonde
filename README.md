@@ -74,7 +74,7 @@ After installing the theme successfully it requires a just a few more steps to g
 
 ### Update config file
 
-Copy the config.toml in the exampleSite to the root of your Hugo site. Change strings as you like.
+Copy the hugo.toml in the exampleSite to the root of your Hugo site. Change strings as you like.
 
 ### Check your site
 
