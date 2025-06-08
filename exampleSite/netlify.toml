@@ -3,7 +3,7 @@ publish = "public"
 command = "git submodule update --remote --merge && npm run build"
 
 [context.production.environment]
-HUGO_VERSION = "0.89.0"
+HUGO_VERSION = "0.147.8"
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
 
@@ -11,20 +11,20 @@ HUGO_ENABLEGITINFO = "true"
 command = "npm run build"
 
 [context.split1.environment]
-HUGO_VERSION = "0.89.0"
+HUGO_VERSION = "0.147.8"
 HUGO_ENV = "production"
 
 [context.deploy-preview]
 command = "npm run build"
 
 [context.deploy-preview.environment]
-HUGO_VERSION = "0.89.0"
+HUGO_VERSION = "0.147.8"
 
 [context.branch-deploy]
 command = "npm run build"
 
 [context.branch-deploy.environment]
-HUGO_VERSION = "0.89.0"
+HUGO_VERSION = "0.147.8"
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
