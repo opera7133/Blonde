@@ -19,6 +19,6 @@
     "concurrently": "^9.1.2",
     "postcss": "^8.5.4",
     "postcss-cli": "^11.0.1",
-    "tailwindcss": "^4.1.8"
+    "tailwindcss": "^4.1.10"
   }
 }
