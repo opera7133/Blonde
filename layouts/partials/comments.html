@@ -1,5 +1,5 @@
 {{- if or .Site.Config.Services.Disqus.Shortname .Site.Params.giscus.repo -}}
-  <div class="bg-white dark:bg-warmgray-900 p-5 my-4">
+  <div class="rounded-xl shadow-sm bg-white dark:bg-warmgray-900 p-5 my-4">
     <div class="mb-3">
       {{- if .Site.Config.Services.Disqus.Shortname -}}
         {{ template "_internal/disqus.html" . }}
