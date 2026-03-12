@@ -28,7 +28,7 @@ base_color = "bg-gray-800"
 description = "Blonde theme for Hugo."
 
 # The number of articles to be displayed on a single page.
-paginator_pages = "5"
+paginator_pages = 5
 
 # Enable this if you want the archive list to be in a drop-down format.
 archive_dropdown = "false"
@@ -78,7 +78,7 @@ darkmode = "light"
   display = true
 
   # Show widgets on mobile (default: false = desktop only)
-  mobile = false
+  mobile = true
 
   # Order of widgets to display
   widgets = ["search", "archive", "category", "tags", "recent"]
