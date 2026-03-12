@@ -1,51 +1,83 @@
 <div class="{{ .Site.Params.base_color }}">
-    <div class="container max-w-screen-xl mr-auto ml-auto">
-        <nav class="flex items-center justify-between flex-wrap {{ .Site.Params.base_color }} p-6">
-            <div class="flex items-center flex-no-shrink {{ .Site.Params.base_color }} text-white mr-6">
-                <a href="{{ .Site.BaseURL }}"><span class="font-semibold text-2xl tracking-tight">{{ .Site.Title }}</span></a>
-            </div>
-            <div class="flex md:hidden">
-                <div class="py-2">
-                    <button onclick="toggleDarkMode()" class="focus:outline-none mr-1" aria-label="Darkmode Toggle Button"><i id="icon"
-                            class="icon-moon inline-flex align-middle leading-normal text-lg text-white"></i></button>
-                    <span class="text-white">|</span>
-                </div>
-                <button id="hamburgerbtn" class="flex items-center px-3 py-1 text-white hover:opacity-50" aria-label="Hamburger Button">
-                    <span class="icon-menu text-2xl"></span>
-                </button>
-            </div>
-            <div class="hidden w-full md:flex md:flex-row sm:items-center md:w-auto" id="mobileMenu">
-                <div class="text-sm lg:flex-grow">
-                </div>
-                <div class="navmenu">
-                    {{ range .Site.Menus.main }}
-                    <a href="{{ .URL }}"
-                        class="no-underline duration-200 block mt-4 sm:inline-block sm:mt-0 text-white hover:opacity-50 mr-4">
-                        {{ .Name }}
-                    </a>
-                    {{ end }}
-                </div>
-                <div class="text-white invisible md:visible">
-                    <span>|</span>
-                    <button onclick="toggleDarkMode()" class="focus-visible:outline-none" aria-label="Darkmode Toggle Button"><i id="icon2"
-                            class="icon-moon hover:opacity-50 duration-200 inline-flex align-middle leading-normal text-lg ml-2"></i></button>
-                </div>
-            </div>
-        </nav>
-    </div>
+  <div class="container max-w-7xl mr-auto ml-auto">
+    <nav
+      class="flex items-center justify-between flex-wrap {{ .Site.Params.base_color }} p-6"
+    >
+      <div
+        class="flex items-center flex-no-shrink {{ .Site.Params.base_color }} text-white mr-6"
+      >
+        <a href="{{ .Site.BaseURL }}"
+          ><span class="font-semibold text-2xl tracking-tight"
+            >{{ .Site.Title }}</span
+          ></a
+        >
+      </div>
+      <div class="flex md:hidden">
+        <div class="py-2">
+          <button
+            onclick="toggleDarkMode()"
+            class="focus:outline-none mr-1"
+            aria-label="Darkmode Toggle Button"
+          >
+            <i
+              id="icon"
+              class="icon-moon inline-flex align-middle leading-normal text-lg text-white"
+            ></i>
+          </button>
+          <span class="text-white">|</span>
+        </div>
+        <button
+          id="hamburgerbtn"
+          class="flex items-center px-3 py-1 text-white hover:opacity-50"
+          aria-label="Hamburger Button"
+        >
+          <span class="icon-menu text-2xl"></span>
+        </button>
+      </div>
+      <div
+        class="hidden w-full md:flex md:flex-row sm:items-center md:w-auto"
+        id="mobileMenu"
+      >
+        <div class="text-sm lg:grow"></div>
+        <div class="flex flex-col md:flex-row gap-2">
+          {{ range .Site.Menus.main }}
+            <a
+              href="{{ .URL }}"
+              class="no-underline duration-200 block sm:inline-block sm:mt-0 text-white hover:opacity-50 mr-4 py-2 sm:py-0"
+            >
+              {{ .Name }}
+            </a>
+          {{ end }}
+        </div>
+        <div class="text-white hidden md:block">
+          <span>|</span>
+          <button
+            onclick="toggleDarkMode()"
+            class="focus-visible:outline-none"
+            aria-label="Darkmode Toggle Button"
+          >
+            <i
+              id="icon2"
+              class="icon-moon hover:opacity-50 duration-200 inline-flex align-middle leading-normal text-lg ml-2"
+            ></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
 </div>
 <style>
-    .active {
-        display: block;
-    }
+  .active {
+    display: block;
+  }
 </style>
 
 <script>
-    let hamburger = document.getElementById('hamburgerbtn');
+  let hamburger = document.getElementById("hamburgerbtn");
 
-    let mobileMenu = document.getElementById('mobileMenu');
+  let mobileMenu = document.getElementById("mobileMenu");
 
-    hamburger.addEventListener('click', function () {
-        mobileMenu.classList.toggle('active');
-    });
+  hamburger.addEventListener("click", function () {
+    mobileMenu.classList.toggle("active");
+  });
 </script>

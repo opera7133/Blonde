@@ -12,13 +12,13 @@ The demo can be seen here: https://blonde.pages.dev
 - Dark/Light mode
 - Google Analytics
 - Google AdSense
-- Yandex.Metrica
 - Widgets
 - Pagination
 - Syntax Highlight
 - RSS feeds
 - Support tags and categories and archives
-- Disqus
+- Page search (with Google Search or Pagefind)
+- Disqus / Gisqus
 - [100/100 Google Lighthouse speed score](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fblonde.pages.dev)
 
 ## Installation
@@ -28,14 +28,14 @@ The demo can be seen here: https://blonde.pages.dev
 Inside the folder of your Hugo site run:
 
 ```bash
-$ git clone https://github.com/opera7133/Blonde themes/Blonde
+git clone https://github.com/opera7133/Blonde themes/Blonde
 ```
 
 Updating theme:
 
 ```bash
-$ cd themes/Blonde
-$ git pull
+cd themes/Blonde
+git pull
 ```
 
 ### Method 2
@@ -43,13 +43,13 @@ $ git pull
 Inside the folder of your Hugo site run:
 
 ```bash
-$ git submodule add https://github.com/opera7133/Blonde.git themes/Blonde
+git submodule add https://github.com/opera7133/Blonde.git themes/Blonde
 ```
 
 Updating theme:
 
 ```bash
-$ git submodule update --remote --merge
+git submodule update --remote --merge
 ```
 
 ### Install dependencies
@@ -57,13 +57,11 @@ $ git submodule update --remote --merge
 Copy at least the following files from `themes/Blonde/exampleSite` to the root folder of your site.
 
 - package.json
-- tailwind.config.js
-- postcss.config.js
 
 After that, run this command.
 
 ```bash
-$ npm install
+npm install
 ```
 
 For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
@@ -74,14 +72,14 @@ After installing the theme successfully it requires a just a few more steps to g
 
 ### Update config file
 
-Copy the hugo.toml in the exampleSite to the root of your Hugo site. Change strings as you like.
+Copy the `hugo.toml` in the exampleSite to the root of your Hugo site. Change strings as you like.
 
 ### Check your site
 
 In order to see your site in action, run Hugo's built-in local server.
 
 ```bash
-$ npm run start
+hugo server
 ```
 
 Now enter `localhost:1313` in the address bar of your browser.
@@ -89,7 +87,22 @@ Now enter `localhost:1313` in the address bar of your browser.
 ### Build your site
 
 ```bash
-$ npm run build
+hugo
+```
+
+### Using Pagefind (optional)
+
+You can use pagefind by changing following line in `hugo.toml`:
+
+```diff
+- widgets = ["search", "archive", "category", "tags", "recent"]
++ widgets = ["pagefind", "archive", "category", "tags", "recent"]
+```
+
+Then run the following command after building your site:
+
+```
+npx -y pagefind --site public
 ```
 
 ## Contributing

@@ -1,3 +1,0 @@
-[build]
-publish = "public"
-command = "hugo --theme=dimension --buildDrafts --gc --minify"

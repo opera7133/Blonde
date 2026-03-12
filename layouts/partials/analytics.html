@@ -1,13 +1,16 @@
 {{ if not hugo.IsServer }}
-{{ with .Site.Config.Services.GoogleAnalytics.ID }}
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  {{ with .Site.Config.Services.GoogleAnalytics.ID }}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id={{ . }}"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', '{{ . }}');
-</script>
-{{ end }}
+      gtag('config', '{{ . }}');
+    </script>
+  {{ end }}
 {{ end }}

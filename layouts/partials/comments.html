@@ -1,0 +1,28 @@
+{{- if or .Site.Config.Services.Disqus.Shortname .Site.Params.giscus.repo -}}
+  <div class="bg-white dark:bg-warmgray-900 p-5 my-4">
+    <div class="mb-3">
+      {{- if .Site.Config.Services.Disqus.Shortname -}}
+        {{ template "_internal/disqus.html" . }}
+      {{- end -}}
+      {{- if .Site.Params.giscus.repo -}}
+        <script
+          src="https://giscus.app/client.js"
+          data-repo="{{ .Site.Params.giscus.repo }}"
+          data-repo-id="{{ .Site.Params.giscus.repo_id }}"
+          data-category="{{ .Site.Params.giscus.category }}"
+          data-category-id="{{ .Site.Params.giscus.category_id }}"
+          data-mapping="{{ .Site.Params.giscus.mapping | default "pathname" }}"
+          data-strict="{{ .Site.Params.giscus.strict | default "0" }}"
+          data-reactions-enabled="{{ .Site.Params.giscus.reactions_enabled | default "1" }}"
+          data-emit-metadata="{{ .Site.Params.giscus.emit_metadata | default "0" }}"
+          data-input-position="{{ .Site.Params.giscus.input_position | default "bottom" }}"
+          data-theme="{{ .Site.Params.giscus.theme | default "preferred_color_scheme" }}"
+          data-lang="{{ .Site.Params.giscus.lang | default "en" }}"
+          data-loading="{{ .Site.Params.giscus.loading | default "lazy" }}"
+          crossorigin="anonymous"
+          async
+        ></script>
+      {{- end -}}
+    </div>
+  </div>
+{{- end -}}

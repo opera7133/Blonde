@@ -7,7 +7,15 @@
   {{ else }}
   <div class="col-span-3 mb-3">
   {{ end }}
-    <h2 class="text-4xl dark:text-white">{{if not .IsHome}}{{ humanize .Title }}{{end}}</h2>
+    {{if not .IsHome}}
+    <h2 class="text-3xl dark:text-white font-semibold">
+      {{ if eq .Data.Plural "archives" }}
+      Archives: {{ .Title }}
+      {{ else }}
+      {{ humanize .Title }}
+      {{ end }}
+    </h2>
+    {{end}}
     {{if .IsHome}}
     {{.Scratch.Set "Paginator" (.Paginate (where .Site.RegularPages "Type" "in" site.Params.mainSections) (.Site.Params.paginator_pages) )}}
     {{else}}

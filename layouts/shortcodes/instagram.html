@@ -1,6 +1,6 @@
 {{ if not hugo.IsServer }}
-    {{ partial "shortcodes/instagram.html" . }}
+  {{ partial "shortcodes/instagram.html" . }}
 {{ else }}
-    <!-- Render the placeholder for the shortcode -->
-    <pre>Instagram Photo: {{ .Get 0 }}</pre>
+  <!-- Render the placeholder for the shortcode -->
+  <pre>Instagram Photo: {{ .Get 0 }}</pre>
 {{ end }}

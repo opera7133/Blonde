@@ -10,11 +10,14 @@ enableRobotsTXT = true
 # Please enable this feature if the site is available in Japanese, Chinese or Korean.
 #hasCJKLanguage = true
 
-# If you're using Google Analytics, you can enable this feature.
-#googleAnalytics = "G-1234567890"
+[services]
+  [services.googleAnalytics]
+  # If you're using Google Analytics, you can enable this feature.
+  #id = "G-1234567890"
 
-# Disqus Comment System
-#disqusShortname = ""
+  [services.disqus]
+  # Disqus Comment System
+  #shortname = "your-disqus-shortname"
 
 [params]
 # Base color of the website.
@@ -74,13 +77,24 @@ darkmode = "light"
     # Order of widgets to display
     widgets = ["search", "archive", "category", "tags", "recent"]
 
-# If you're using Yandex.Metrica, you can enable this feature.
-#[params.analytics.yandexmetrica]
-#    enabled = true
-#    tagNumber = ''
+
+  [params.giscus]
+    # Giscus Comment System
+    # See https://giscus.app for setup instructions
+    #repo = "your-repo"
+    #repo_id = "your-repo-id"
+    #category = "Announcements"
+    #category_id = "your-category-id"
+    #mapping = "pathname"
+    #strict = "0"
+    #reactions_enabled = "1"
+    #emit_metadata = "0"
+    #input_position = "bottom"
+    #theme = "preferred_color_scheme"
+    #lang = "en"
+    #loading = "lazy"
 
 [menu]
-
   [[menu.main]]
     identifier = "home"
     name = "Home"
@@ -105,7 +119,6 @@ tag = "tags"
 archive = "archives"
 
 [privacy]
-
   [privacy.vimeo]
     disabled = false
     simple = true
@@ -123,13 +136,23 @@ archive = "archives"
     disabled = false
     privacyEnhanced = true
 
-[services]
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
-  [services.instagram]
-    disableInlineCSS = true
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
 
-  [services.x]
-    disableInlineCSS = true
-
-[markup.goldmark.renderer]
-  unsafe = true
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'

@@ -1,0 +1,20 @@
+{{ define "header_css" }}{{ end }}
+
+{{ define "main" }}
+<div class="grid grid-cols-3 gap-4">
+  {{ if .Site.Params.widgets.display }}
+  <div class="col-span-3 lg:col-span-2 dark:text-white">
+  {{ else }}
+  <div class="col-span-3 dark:text-white">
+  {{ end }}
+    <div class="bg-white dark:bg-warmgray-900 p-10 my-4 text-center">
+      <h1 class="mb-4 text-6xl font-bold">404</h1>
+      <p class="mb-4 text-2xl">Page Not Found</p>
+      <p class="mt-8"><a href="{{ .Site.BaseURL }}" class="text-blue-500 hover:text-blue-700">Return to Home</a></p>
+    </div>
+  </div>
+  {{ if .Site.Params.widgets.display }}
+  {{ partial "widgets.html" . }}
+  {{ end }}
+</div>
+{{ end }}

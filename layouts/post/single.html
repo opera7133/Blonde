@@ -18,8 +18,9 @@
             {{ with .Params.tags }}
             <div id="tags">
               <span class="icon-local_offer mr-1"></span>
-              {{ range . }}
-              <a href='{{ "tags" | absURL }}/{{ . | urlize }}'>{{ . }}</a> |
+              {{ $tagsLen := len . }}
+              {{ range $k, $v := . }}
+              <a href='{{ "tags" | absURL }}/{{ . | urlize }}' class="hover:opacity-70 duration-100">{{ . }}</a>{{ if ne $k (sub $tagsLen 1) }} | {{ end }}
               {{ end }}
             </div>
             {{ end }}
@@ -35,7 +36,7 @@
           (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
         {{ end }}
-        <div class="prose md:prose-lg lg:prose-xl max-w-none dark:prose-invert mt-5">{{.Content}}</div>
+        <div class="prose md:prose-base lg:prose-lg max-w-none dark:prose-invert mt-5" {{ "data-pagefind-body" | safeHTMLAttr }}>{{.Content}}</div>
         {{ if and (and (.Site.Params.ad.googleAdSense) (.Site.Params.ad.postBottom)) (.Site.Params.ad.adslot) }}
         <ins class="adsbygoogle" style="display:block" data-ad-client="{{.Site.Params.ad.googleAdSense}}"
           data-ad-slot="{{.Site.Params.ad.adslot}}" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -63,7 +64,7 @@
             {{ with .PrevInSection }}
             <a class="previous lg:text-2xl" href="{{.Permalink}}">
               <div
-                class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                class="transition-colors duration-300 border border-gray-600 hover:border-black dark:border-gray-400 dark:hover:border-white h-auto m-3 text-center py-3 lg:py-1">
                 <span class="icon-keyboard_arrow_left"></span> {{.Title}}
               </div>
             </a>
@@ -72,18 +73,14 @@
           {{ with .NextInSection }}
           <a class="next lg:text-2xl" href="{{.Permalink}}">
             <div
-              class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+              class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black dark:border-gray-400 dark:hover:border-white h-auto m-3 text-center py-3 lg:py-1">
               {{.Title}} <span class="icon-keyboard_arrow_right"></span>
             </div>
           </a>
           {{ end }}
         </div>
       </div>
-      <div class="bg-white dark:bg-warmgray-900 p-5 my-4">
-        <div class="mb-3">
-          {{ template "_internal/disqus.html" . }}
-        </div>
-      </div>
+      {{ partial "comments.html" . }}
     </div>
     {{ if .Site.Params.widgets.display }}
     {{ partial "widgets.html" . }}

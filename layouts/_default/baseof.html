@@ -1,21 +1,16 @@
-<!DOCTYPE html>
-{{ if eq .Site.Params.darkmode "dark" }}
-<html lang="{{ .Site.LanguageCode | default .Site.Language.Lang }}" class="dark">
-{{ else }}
+<!doctype html>
 <html lang="{{ .Site.LanguageCode | default .Site.Language.Lang }}">
-{{ end }}
-{{- partial "head.html" . -}}
-
-<body class="font-sans">
+  {{- partial "head.html" . -}}
+  <body class="font-sans">
     <div class="min-h-screen flex flex-col bg-gray-100 dark:bg-warmgray-800">
-        {{- partial "header.html" . -}}
-        <div class="container max-w-screen-xl mx-auto mt-4 flex-grow px-5 lg:px-0" id="content">
-            <div class="lg:mx-5">
-            {{- block "main" . }}{{- end }}
-            </div>
-        </div>
-        {{- partial "footer.html" . -}}
+      {{- partial "header.html" . -}}
+      <div
+        class="container max-w-7xl mx-auto mt-4 grow px-5 lg:px-0"
+        id="content"
+      >
+        <div class="lg:mx-5">{{- block "main" . }}{{- end }}</div>
+      </div>
+      {{- partial "footer.html" . -}}
     </div>
-</body>
-
+  </body>
 </html>
