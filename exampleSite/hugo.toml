@@ -43,6 +43,10 @@ recentLimit = 5
 # Light mode by default : light
 darkmode = "light"
 
+# Logo image path (relative to static/ or an absolute URL).
+# If set, the logo image is shown in the header instead of the site title text.
+# logo = "/img/logo.png"
+
   [params.ad]
   # Google AdSense
   # ex. ca-pub-0000000000000000
@@ -81,7 +85,7 @@ darkmode = "light"
   mobile = true
 
   # Order of widgets to display
-  widgets = ["search", "archive", "category", "tags", "recent"]
+  widgets = ["search", "archive", "category", "tags", "social", "recent"]
 
   [params.giscus]
   # Giscus Comment System
@@ -104,6 +108,25 @@ darkmode = "light"
   enable = true
   # Uncomment and edit to limit which services are shown
   # services = ["twitter", "facebook", "line", "linkedin", "whatsapp", "mail", "copy"]
+
+  # Social links widget
+  # Supported icons: github, twitter-x, bluesky, youtube, instagram, facebook,
+  #                  linkedin, mastodon, threads, tiktok, twitch, line, whatsapp,
+  #                  steam, vimeo, wechat, sina-weibo, mail, globe
+  [[params.social]]
+  name = "GitHub"
+  url = "https://github.com/opera7133"
+  icon = "github"
+
+  [[params.social]]
+  name = "Twitter / X"
+  url = "https://x.com/scgame_m"
+  icon = "twitter-x"
+
+  [[params.social]]
+  name = "YouTube"
+  url = "https://www.youtube.com/@wamo"
+  icon = "youtube"
 
 [menu]
   [[menu.main]]

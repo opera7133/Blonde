@@ -112,3 +112,8 @@ If you find a bug or have an idea for a feature, feel free to write an [issue](h
 ## License
 
 This theme is released under the [MIT license](https://github.com/opera7133/Blonde/blob/master/LICENSE).
+
+Regarding the icons in assets/icons, Material Icons are licensed under the Apache 2.0 License, and Bootstrap Icons are licensed under the MIT License.
+
+- [Material Icons : Google](https://github.com/google/material-design-icons)
+- [Bootstrap Icons : The Bootstrap Authors](https://github.com/twbs/icons)

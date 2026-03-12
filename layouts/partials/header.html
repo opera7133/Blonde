@@ -3,9 +3,17 @@
     <nav class="flex items-center justify-between flex-wrap px-6 py-4">
       <div class="flex items-center flex-no-shrink text-white mr-6">
         <a href="{{ .Site.BaseURL }}"
-          ><span class="font-semibold text-xl tracking-tight"
-            >{{ .Site.Title }}</span
-          ></a
+          >{{ if .Site.Params.logo }}
+            <img
+              src="{{ .Site.Params.logo }}"
+              alt="{{ .Site.Title }}"
+              class="h-8 w-auto"
+            />
+          {{ else }}
+            <span class="font-semibold text-xl tracking-tight"
+              >{{ .Site.Title }}</span
+            >
+          {{ end }}</a
         >
       </div>
       <div class="flex md:hidden">

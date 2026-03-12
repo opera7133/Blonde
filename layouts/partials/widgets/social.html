@@ -1,0 +1,31 @@
+{{ with .Site.Params.social }}
+  <div
+    class="bg-white rounded-xl shadow-sm mb-4 overflow-hidden dark:bg-warmgray-900"
+  >
+    <div class="px-5 py-4 border-b border-gray-100 dark:border-warmgray-700">
+      <p
+        class="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400"
+      >
+        Social
+      </p>
+    </div>
+    <div class="p-4 flex flex-wrap gap-2">
+      {{ range . }}
+        {{ if .url }}
+          <a
+            href="{{ .url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="{{ .name }}"
+            class="inline-flex items-center gap-1.5 bg-gray-100 text-gray-700 rounded-full px-3 py-1.5 text-sm font-medium hover:bg-sky-50 hover:text-sky-700 transition-colors duration-150 dark:bg-warmgray-800 dark:text-gray-300 dark:hover:bg-warmgray-700"
+          >
+            {{ if .icon }}
+              {{ partial "icon.html" (dict "name" .icon "class" "text-base") }}
+            {{ end }}
+            {{ if .name }}<span>{{ .name }}</span>{{ end }}
+          </a>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
