@@ -19,7 +19,7 @@ The demo can be seen here: https://blonde.pages.dev
 - Support tags and categories and archives
 - Page search (with Google Search or Pagefind)
 - Disqus / Gisqus
-- [100/100 Google Lighthouse speed score](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fblonde.pages.dev)
+- [100/100 Google Lighthouse speed score](https://pagespeed.web.dev/analysis/https-blonde-pages-dev/jiu5fx88oj?form_factor=mobile)
 
 ## Installation
 
