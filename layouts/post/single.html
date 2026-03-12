@@ -3,11 +3,11 @@
 {{ define "main" }}
 <div class="grid grid-cols-3 gap-4">
   {{ if .Site.Params.widgets.display }}
-  <div class="col-span-3 lg:col-span-2 dark:text-white">
+  <main class="col-span-3 lg:col-span-2 dark:text-white">
   {{ else }}
-  <div class="col-span-3 dark:text-white">
+  <main class="col-span-3 dark:text-white">
   {{ end }}
-      <div class="bg-white dark:bg-warmgray-900 rounded-xl shadow-sm p-6 my-4">
+      <article class="bg-white dark:bg-warmgray-900 rounded-xl shadow-sm p-6 my-4">
         <h1 class="mb-3 text-4xl font-bold tracking-tight leading-tight">{{.Title}}</h1>
         <aside id="meta">
           <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
@@ -55,7 +55,7 @@
           </div>
           {{ end }}
         </aside>
-      </div>
+      </article>
       {{ partial "share.html" . }}
       <div class="bg-white dark:bg-warmgray-900 rounded-xl shadow-sm p-4 my-4">
         <div class="grid grid-cols-2 gap-3">
@@ -84,6 +84,6 @@
     {{ if .Site.Params.widgets.display }}
     {{ partial "widgets.html" . }}
     {{ end }}
-  </div>
+  </main>
 </div>
 {{ end }}

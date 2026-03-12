@@ -3,9 +3,9 @@
 {{ define "main" }}
 <div class="grid grid-cols-3 gap-4">
   {{ if .Site.Params.widgets.display }}
-  <div class="col-span-3 lg:col-span-2 mb-3">
+  <main class="col-span-3 lg:col-span-2 mb-3">
   {{ else }}
-  <div class="col-span-3 mb-3">
+  <main class="col-span-3 mb-3">
   {{ end }}
     {{if not .IsHome}}
     <h2 class="text-3xl dark:text-white font-semibold">
@@ -30,7 +30,7 @@
     </a>
     {{ end }}
     {{ partial "paginator.html" . }}
-  </div>
+  </main>
   {{ if .Site.Params.widgets.display }}
     {{ partial "widgets.html" . }}
   {{ end }}
