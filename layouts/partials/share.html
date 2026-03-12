@@ -1,0 +1,134 @@
+{{- if .Site.Params.share.enable -}}
+  {{- $permalink := .Permalink -}}
+  {{- $title := .Title -}}
+  {{- $allServices := slice "twitter" "facebook" "line" "linkedin" "whatsapp" "mail" "copy" -}}
+  {{- $services := default $allServices .Site.Params.share.services -}}
+  <div class="bg-white dark:bg-warmgray-900 rounded-xl shadow-sm p-5 my-4">
+    <p
+      class="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3"
+    >
+      Share this post
+    </p>
+    <div class="flex flex-wrap gap-2">
+      {{- range $services -}}
+        {{- if eq . "twitter" -}}
+          <a
+            href="https://twitter.com/intent/tweet?text={{ $title | urlquery }}&url={{ $permalink | urlquery }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Share on X (Twitter)"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gray-900 text-white text-sm font-medium hover:bg-gray-700 transition-colors duration-200"
+          >
+            {{ partial "icon.html" (dict "name" "twitter-x" "class" "text-base") }}<span
+              >X</span
+            >
+          </a>
+        {{- end -}}
+        {{- if eq . "facebook" -}}
+          <a
+            href="https://www.facebook.com/sharer/sharer.php?u={{ $permalink | urlquery }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Share on Facebook"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
+          >
+            {{ partial "icon.html" (dict "name" "facebook" "class" "text-base") }}<span
+              >Facebook</span
+            >
+          </a>
+        {{- end -}}
+        {{- if eq . "line" -}}
+          <a
+            href="https://social-plugins.line.me/lineit/share?url={{ $permalink | urlquery }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Share on LINE"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-green-500 text-white text-sm font-medium hover:bg-green-600 transition-colors duration-200"
+          >
+            {{ partial "icon.html" (dict "name" "line" "class" "text-base") }}<span
+              >LINE</span
+            >
+          </a>
+        {{- end -}}
+        {{- if eq . "linkedin" -}}
+          <a
+            href="https://www.linkedin.com/sharing/share-offsite/?url={{ $permalink | urlquery }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Share on LinkedIn"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-blue-700 text-white text-sm font-medium hover:bg-blue-800 transition-colors duration-200"
+          >
+            {{ partial "icon.html" (dict "name" "linkedin" "class" "text-base") }}<span
+              >LinkedIn</span
+            >
+          </a>
+        {{- end -}}
+        {{- if eq . "whatsapp" -}}
+          <a
+            href="https://wa.me/?text={{ $title | urlquery }}%20{{ $permalink | urlquery }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Share on WhatsApp"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-green-600 text-white text-sm font-medium hover:bg-green-700 transition-colors duration-200"
+          >
+            {{ partial "icon.html" (dict "name" "whatsapp" "class" "text-base") }}<span
+              >WhatsApp</span
+            >
+          </a>
+        {{- end -}}
+        {{- if eq . "mail" -}}
+          <a
+            href="mailto:?subject={{ $title | urlquery }}&body={{ $permalink | urlquery }}"
+            aria-label="Share by email"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gray-500 text-white text-sm font-medium hover:bg-gray-600 transition-colors duration-200"
+          >
+            {{ partial "icon.html" (dict "name" "mail" "class" "text-base") }}<span
+              >Email</span
+            >
+          </a>
+        {{- end -}}
+        {{- if eq . "copy" -}}
+          <button
+            id="share-copy-btn"
+            onclick="copyShareLink(this)"
+            title="Copy link"
+            aria-label="Copy link"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm font-medium hover:bg-gray-200 transition-colors duration-200 cursor-pointer border-0 dark:bg-warmgray-700 dark:text-gray-300 dark:hover:bg-warmgray-600"
+          >
+            {{ partial "icon.html" (dict "name" "link" "class" "text-base") }}<span
+              >Copy</span
+            >
+          </button>
+        {{- end -}}
+      {{- end -}}
+    </div>
+  </div>
+<script>
+  (function () {
+    const shareUrl = {{ $permalink | jsonify }};
+    window.copyShareLink = function (btn) {
+      navigator.clipboard.writeText(shareUrl).then(function () {
+        const orig = btn.title;
+        const origContent = btn.innerHTML;
+        btn.title = "Copied!";
+        btn.innerHTML = origContent.replace("Copy", "Copied!");
+        btn.setAttribute("aria-label", "Copied!");
+        setTimeout(function () {
+          btn.title = orig;
+          btn.innerHTML = origContent;
+          btn.setAttribute("aria-label", "Copy link");
+        }, 2000);
+      }).catch(function () {
+        const el = document.createElement("textarea");
+        el.value = shareUrl;
+        el.style.position = "fixed";
+        el.style.opacity = "0";
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand("copy");
+        document.body.removeChild(el);
+      });
+    };
+  })();
+</script>
+{{- end -}}

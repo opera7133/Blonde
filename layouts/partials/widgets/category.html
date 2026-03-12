@@ -1,16 +1,25 @@
 {{ if .Site.Taxonomies.categories }}
-  <div class="bg-white panel mb-3 pb-5 dark:bg-warmgray-900">
-    <p
-      class="text-xl text-center text-gray-700 py-5 dark:text-gray-300 font-bold"
-    >
-      Categories
-    </p>
-    {{ range $key, $value := .Site.Taxonomies.categories }}
-      <a
-        class="text-center block duration-100 py-2 px-4 mx-4 hover:bg-gray-100 text-gray-800 dark:text-gray-200 dark:hover:bg-warmgray-800"
-        href="{{ $.Site.BaseURL }}/categories/{{ $key | urlize }}"
-        >{{ $key | humanize }}</a
+  <div
+    class="bg-white rounded-xl shadow-sm mb-4 overflow-hidden dark:bg-warmgray-900"
+  >
+    <div class="px-5 py-4 border-b border-gray-100 dark:border-warmgray-700">
+      <p
+        class="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400"
       >
-    {{ end }}
+        Categories
+      </p>
+    </div>
+    <div class="divide-y divide-gray-100 dark:divide-warmgray-700">
+      {{ range $key, $value := .Site.Taxonomies.categories }}
+        <a
+          class="flex items-center justify-between px-5 py-3 hover:bg-gray-50 dark:hover:bg-warmgray-800 transition-colors duration-150 text-sm text-gray-700 dark:text-gray-300"
+          href="{{ $.Site.BaseURL }}/categories/{{ $key | urlize }}"
+          ><span>{{ $key | humanize }}</span
+          ><span class="text-xs text-gray-400 dark:text-gray-500"
+            >{{ $value.Count }}</span
+          ></a
+        >
+      {{ end }}
+    </div>
   </div>
 {{ end }}

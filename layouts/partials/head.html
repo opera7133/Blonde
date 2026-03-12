@@ -1,6 +1,6 @@
 <head>
   {{- partial "analytics" . -}}
-  <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+  <title>{{ if not .IsHome }}{{ .Title }} |{{ end }}{{ site.Title }}</title>
   <meta charset="utf-8" />
   <meta
     name="viewport"
@@ -33,7 +33,7 @@
   <meta name="theme-color" content="#ffffff" />
   <meta
     property="og:title"
-    content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ site.Title }}"
+    content="{{ if not .IsHome }}{{ .Title }} |{{ end }}{{ site.Title }}"
   />
   {{ with resources.Get "css/style.css" }}
     {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
@@ -52,13 +52,6 @@
       {{ end }}
     {{ end }}
   {{ end }}
-  <link
-    href=" {{ "css/blonde.min.css" | relURL }}"
-    rel="stylesheet"
-    type="text/css"
-    media="print"
-    onload="this.media=' all'"
-  />
   {{ partial "seo/print.html" . }}
   {{ block "header_css" . }}{{ end }}
   <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}" />

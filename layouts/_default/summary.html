@@ -1,41 +1,38 @@
 <div
-  class="bg-white w-full p-3 lg:max-w-full lg:flex mt-5 transform hover:-translate-y-1 hover:shadow-md duration-500 dark:bg-warmgray-900"
+  class="bg-white w-full lg:max-w-full lg:flex mt-4 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:bg-warmgray-900"
 >
   {{ if .Site.Params.post.thumbnail }}
     {{ if .Params.image }}
       <img
         alt="thumbnail"
         id="thumb"
-        class="{{ .Site.Params.post.thumbnail_width }} {{ .Site.Params.post.thumbnail_height }}"
+        class="{{ .Site.Params.post.thumbnail_width }} {{ .Site.Params.post.thumbnail_height }} object-cover"
         src="{{ .Params.image | relURL }}"
       />
     {{ else }}
       {{ if .Site.Params.post.noimage }}
         <img
-          alt="thumbnail"
+          alt=""
           id="thumb"
-          class="{{ .Site.Params.post.thumbnail_width }} {{ .Site.Params.post.thumbnail_height }}"
+          class="{{ .Site.Params.post.thumbnail_width }} {{ .Site.Params.post.thumbnail_height }} object-cover"
           src="{{ "/img/default.jpg" | relURL }}"
         />
       {{ end }}
     {{ end }}
   {{ end }}
-  <div
-    class="relative pl-4 p-2 justify-between leading-normal max-w-full w-full"
-  >
-    <div class="text-gray-900 font-bold text-xl mb-2 dark:text-white">
+  <div class="relative p-5 leading-normal max-w-full w-full">
+    <div
+      class="text-gray-900 font-bold text-xl mb-2 dark:text-white leading-snug"
+    >
       {{ .Title }}
     </div>
-    <p class="text-gray-700 text-base pb-5 dark:text-gray-300">
+    <p class="text-gray-600 text-sm leading-relaxed pb-6 dark:text-gray-400">
       {{ substr .Summary 0 130 | plainify | htmlUnescape }}...
     </p>
-    <p
-      class="text-sm text-gray-600 absolute items-center right-0 bottom-0 dark:text-gray-400"
+    <time
+      class="text-xs text-gray-500 absolute items-center right-0 bottom-0 pb-4 pr-5 dark:text-gray-500 flex gap-1"
     >
-      <time
-        ><span class="icon-access_time mr-1"></span
-        >{{ .Date.Format "2006/01/02" }}</time
-      >
-    </p>
+      {{ partial "icon.html" (dict "name" "schedule" "class" "text-xs") }}{{ .Date.Format "2006/01/02" }}
+    </time>
   </div>
 </div>

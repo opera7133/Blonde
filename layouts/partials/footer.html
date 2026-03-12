@@ -73,8 +73,16 @@
   </script>
   {{ end }}
   <script>
-    var icon = document.getElementById("icon");
-    var icon2 = document.getElementById("icon2");
+    function setDarkModeIcons(isDark) {
+      var moonIcon1 = document.getElementById("icon-moon");
+      var sunIcon1 = document.getElementById("icon-sun");
+      var moonIcon2 = document.getElementById("icon2-moon");
+      var sunIcon2 = document.getElementById("icon2-sun");
+      if (moonIcon1) moonIcon1.classList.toggle("hidden", isDark);
+      if (sunIcon1) sunIcon1.classList.toggle("hidden", !isDark);
+      if (moonIcon2) moonIcon2.classList.toggle("hidden", isDark);
+      if (sunIcon2) sunIcon2.classList.toggle("hidden", !isDark);
+    }
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (
       document.documentElement.classList.contains("dark") ||
@@ -82,27 +90,19 @@
       (!("theme" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
-      icon.classList.remove("icon-moon");
-      icon.classList.add("icon-sun");
-      icon2.classList.remove("icon-moon");
-      icon2.classList.add("icon-sun");
+      setDarkModeIcons(true);
       document.documentElement.classList.add("dark");
     } else {
+      setDarkModeIcons(false);
       document.documentElement.classList.remove("dark");
     }
     function toggleDarkMode() {
       if (document.documentElement.classList.contains("dark")) {
-        icon.classList.remove("icon-sun");
-        icon.classList.add("icon-moon");
-        icon2.classList.remove("icon-sun");
-        icon2.classList.add("icon-moon");
+        setDarkModeIcons(false);
         document.documentElement.classList.remove("dark");
         localStorage.theme = "light";
       } else {
-        icon.classList.remove("icon-moon");
-        icon.classList.add("icon-sun");
-        icon2.classList.remove("icon-moon");
-        icon2.classList.add("icon-sun");
+        setDarkModeIcons(true);
         document.documentElement.classList.add("dark");
         localStorage.theme = "dark";
       }

@@ -36,82 +36,93 @@ archive_dropdown = "false"
 # Number of tags to be displayed.
 tagsLimit = 20
 
+# Number of recent posts to be displayed in the sidebar.
+recentLimit = 5
+
 # Dark mode by default : dark
 # Light mode by default : light
 darkmode = "light"
 
   [params.ad]
-    # Google AdSense
-    # ex. ca-pub-0000000000000000
-    googleAdSense = ""
+  # Google AdSense
+  # ex. ca-pub-0000000000000000
+  googleAdSense = ""
 
-    # ex. 000000000
-    adslot = ""
+  # ex. 000000000
+  adslot = ""
 
-    # Placement of ads
-    postTop = false
-    postBottom = false
+  # Placement of ads
+  postTop = false
+  postBottom = false
 
   [params.post]
-    # Show thumbnails
-    thumbnail = true
+  # Show thumbnails
+  thumbnail = true
 
-    # Disable the "NO IMAGE" image.
-    noimage = true
+  # Enable the "NO IMAGE" image.
+  noimage = true
 
-    # See the Tailwind CSS documentation to set it up.
-    # Recommended settings are h-32 to h-48.
-    # https://tailwindcss.com/docs/height
-    thumbnail_height = "lg:h-44"
+  # See the Tailwind CSS documentation to set it up.
+  # Recommended settings are h-32 to h-48.
+  # https://tailwindcss.com/docs/height
+  thumbnail_height = "lg:h-44"
 
-    # https://tailwindcss.com/docs/width
-    thumbnail_width = "lg:w-auto"
+  # https://tailwindcss.com/docs/width
+  thumbnail_width = "lg:w-auto"
 
-    # Number of characters in description
-    description = "130"
+  # Number of characters in description
+  description = "130"
 
   [params.widgets]
-    # Display widgets
-    display = true
+  # Display widgets
+  display = true
 
-    # Order of widgets to display
-    widgets = ["search", "archive", "category", "tags", "recent"]
+  # Show widgets on mobile (default: false = desktop only)
+  mobile = false
 
+  # Order of widgets to display
+  widgets = ["search", "archive", "category", "tags", "recent"]
 
   [params.giscus]
-    # Giscus Comment System
-    # See https://giscus.app for setup instructions
-    #repo = "your-repo"
-    #repo_id = "your-repo-id"
-    #category = "Announcements"
-    #category_id = "your-category-id"
-    #mapping = "pathname"
-    #strict = "0"
-    #reactions_enabled = "1"
-    #emit_metadata = "0"
-    #input_position = "bottom"
-    #theme = "preferred_color_scheme"
-    #lang = "en"
-    #loading = "lazy"
+  # Giscus Comment System
+  # See https://giscus.app for setup instructions
+  #repo = "your-repo"
+  #repo_id = "your-repo-id"
+  #category = "Announcements"
+  #category_id = "your-category-id"
+  #mapping = "pathname"
+  #strict = "0"
+  #reactions_enabled = "1"
+  #emit_metadata = "0"
+  #input_position = "bottom"
+  #theme = "preferred_color_scheme"
+  #lang = "en"
+  #loading = "lazy"
+
+  [params.share]
+  # Enable SNS share buttons on posts
+  enable = true
+  # Uncomment and edit to limit which services are shown
+  # services = ["twitter", "facebook", "line", "linkedin", "whatsapp", "mail", "copy"]
 
 [menu]
   [[menu.main]]
-    identifier = "home"
-    name = "Home"
-    url = "/"
-    weight = 1
+  identifier = "home"
+  name = "Home"
+  url = "/"
+  weight = 1
 
   [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
-    weight = 2
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 2
 
   [[menu.main]]
-    identifier = "contact"
-    name = "Contact"
-    url = "/contact/"
-    weight = 3
+  identifier = "contact"
+  name = "Contact"
+  url = "/contact/"
+  weight = 3
 
 [taxonomies]
 category = "categories"
@@ -120,39 +131,40 @@ archive = "archives"
 
 [privacy]
   [privacy.vimeo]
-    disabled = false
-    simple = true
+  disabled = false
+  simple = true
 
   [privacy.x]
-    disabled = false
-    enableDNT = true
-    simple = true
+  disabled = false
+  enableDNT = true
+  simple = true
 
   [privacy.instagram]
-    disabled = false
-    simple = true
+  disabled = false
+  simple = true
 
   [privacy.youtube]
-    disabled = false
-    privacyEnhanced = true
+  disabled = false
+  privacyEnhanced = true
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true
+    unsafe = true
 
 [build]
   [build.buildStats]
-    enable = true
+  enable = true
   [[build.cachebusters]]
-    source = 'assets/notwatching/hugo_stats\.json'
-    target = 'css'
+  source = 'assets/notwatching/hugo_stats\.json'
+  target = 'css'
 
 [module]
   [[module.mounts]]
-    source = 'assets'
-    target = 'assets'
+  source = 'assets'
+  target = 'assets'
+
   [[module.mounts]]
-    disableWatch = true
-    source = 'hugo_stats.json'
-    target = 'assets/notwatching/hugo_stats.json'
+  disableWatch = true
+  source = 'hugo_stats.json'
+  target = 'assets/notwatching/hugo_stats.json'

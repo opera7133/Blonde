@@ -1,21 +1,30 @@
-<div class="bg-white panel mb-3 pb-5 dark:bg-warmgray-900">
-  <p
-    class="text-xl text-center text-gray-700 py-3 px-3 dark:text-gray-300 font-bold"
-  >
-    Archives
-  </p>
+<div
+  class="bg-white rounded-xl shadow-sm mb-4 overflow-hidden dark:bg-warmgray-900"
+>
+  <div class="px-5 py-4 border-b border-gray-100 dark:border-warmgray-700">
+    <p
+      class="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400"
+    >
+      Archives
+    </p>
+  </div>
   {{ if eq .Site.Params.archive_dropdown "false" }}
-    {{ range $name, $items := .Site.Taxonomies.archives }}
-      <a
-        class="text-center block duration-100 py-2 px-4 mx-4 hover:bg-gray-100 text-gray-800 dark:text-gray-200 dark:hover:bg-warmgray-800"
-        href="{{ $.Site.BaseURL }}/archives/{{ $name | urlize | lower }}"
-        >{{ $name }} ({{ .Count }})</a
-      >
-    {{ end }}
+    <div class="divide-y divide-gray-100 dark:divide-warmgray-700">
+      {{ range $name, $items := .Site.Taxonomies.archives }}
+        <a
+          class="flex items-center justify-between px-5 py-3 hover:bg-gray-50 dark:hover:bg-warmgray-800 transition-colors duration-150 text-sm text-gray-700 dark:text-gray-300"
+          href="{{ $.Site.BaseURL }}/archives/{{ $name | urlize | lower }}"
+          ><span>{{ $name }}</span
+          ><span class="text-xs text-gray-400 dark:text-gray-500"
+            >{{ $items.Count }}</span
+          ></a
+        >
+      {{ end }}
+    </div>
   {{ else }}
-    <div class="mx-4">
+    <div class="p-4">
       <select
-        class="text-center block mx-auto w-full py-2 px-4 duration-100 bg-white hover:bg-gray-200 text-gray-800 dark:bg-warmgray-900 dark:text-gray-200 dark:hover:bg-warmgray-800"
+        class="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:bg-warmgray-800 dark:border-warmgray-700 dark:text-gray-300"
         name="archive"
         onChange="location.href=value;"
       >
@@ -24,7 +33,7 @@
           <option
             value="{{ $.Site.BaseURL }}/archives/{{ $name | urlize | lower }}"
           >
-            {{ $name }} ({{ .Count }})
+            {{ $name }} ({{ $items.Count }})
           </option>
         {{ end }}
       </select>

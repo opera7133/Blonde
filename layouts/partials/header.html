@@ -1,13 +1,9 @@
-<div class="{{ .Site.Params.base_color }}">
+<div class="{{ .Site.Params.base_color }} shadow-sm">
   <div class="container max-w-7xl mr-auto ml-auto">
-    <nav
-      class="flex items-center justify-between flex-wrap {{ .Site.Params.base_color }} p-6"
-    >
-      <div
-        class="flex items-center flex-no-shrink {{ .Site.Params.base_color }} text-white mr-6"
-      >
+    <nav class="flex items-center justify-between flex-wrap px-6 py-4">
+      <div class="flex items-center flex-no-shrink text-white mr-6">
         <a href="{{ .Site.BaseURL }}"
-          ><span class="font-semibold text-2xl tracking-tight"
+          ><span class="font-semibold text-xl tracking-tight"
             >{{ .Site.Title }}</span
           ></a
         >
@@ -16,22 +12,24 @@
         <div class="py-2">
           <button
             onclick="toggleDarkMode()"
-            class="focus:outline-none mr-1"
+            class="focus-visible:outline-none mr-1 text-white/80 hover:text-white transition-colors duration-200 cursor-pointer"
             aria-label="Darkmode Toggle Button"
           >
-            <i
-              id="icon"
-              class="icon-moon inline-flex align-middle leading-normal text-lg text-white"
-            ></i>
+            <span id="icon-moon"
+              >{{ partial "icon.html" (dict "name" "bedtime" "class" "text-lg") }}</span
+            >
+            <span id="icon-sun" class="hidden"
+              >{{ partial "icon.html" (dict "name" "sunny" "class" "text-lg") }}</span
+            >
           </button>
           <span class="text-white">|</span>
         </div>
         <button
           id="hamburgerbtn"
-          class="flex items-center px-3 py-1 text-white hover:opacity-50"
+          class="flex items-center px-3 py-2 text-white/80 hover:text-white transition-colors duration-200"
           aria-label="Hamburger Button"
         >
-          <span class="icon-menu text-2xl"></span>
+          {{ partial "icon.html" (dict "name" "menu" "class" "text-2xl") }}
         </button>
       </div>
       <div
@@ -43,7 +41,7 @@
           {{ range .Site.Menus.main }}
             <a
               href="{{ .URL }}"
-              class="no-underline duration-200 block sm:inline-block sm:mt-0 text-white hover:opacity-50 mr-4 py-2 sm:py-0"
+              class="no-underline font-medium text-sm block sm:inline-block sm:mt-0 text-white/80 hover:text-white mr-4 py-2 sm:py-0 transition-colors duration-200"
             >
               {{ .Name }}
             </a>
@@ -53,13 +51,15 @@
           <span>|</span>
           <button
             onclick="toggleDarkMode()"
-            class="focus-visible:outline-none"
+            class="focus-visible:outline-none hover:opacity-50 duration-200 ml-2 cursor-pointer"
             aria-label="Darkmode Toggle Button"
           >
-            <i
-              id="icon2"
-              class="icon-moon hover:opacity-50 duration-200 inline-flex align-middle leading-normal text-lg ml-2"
-            ></i>
+            <span id="icon2-moon"
+              >{{ partial "icon.html" (dict "name" "bedtime" "class" "text-lg") }}</span
+            >
+            <span id="icon2-sun" class="hidden"
+              >{{ partial "icon.html" (dict "name" "sunny" "class" "text-lg") }}</span
+            >
           </button>
         </div>
       </div>

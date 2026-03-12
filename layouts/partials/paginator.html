@@ -1,14 +1,14 @@
 {{ $pag := $.Paginator }}
 {{ if gt $pag.TotalPages 1 }}
   <nav aria-label="page navigation">
-    <ul class="flex list-none my-5 p-0 justify-center">
+    <ul class="flex list-none my-6 p-0 justify-center items-center gap-1">
       <!-- Don't show on 1st and 2nd page -->
       {{ if and (ne $pag.PageNumber 1) (ne $pag.PageNumber 2) }}
         <li class="page-item">
           <a
             href="{{ $pag.First.URL }}"
             rel="first"
-            class="mx-2 py-3 px-5 rounded-none relative block border-white border-0 duration-100 bg-white text-blue-600 hover:bg-gray-400 hover:text-blue-700 dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700"
+            class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-warmgray-700 transition-colors duration-150"
             >First</a
           >
         </li>
@@ -19,7 +19,7 @@
           <a
             href="{{ $pag.Prev.URL }}"
             rel="prev"
-            class="mx-2 py-3 px-5 rounded-none relative block border-white border-0 duration-100 bg-white text-blue-600 hover:bg-gray-400 hover:text-blue-700 dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700"
+            class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-warmgray-700 transition-colors duration-150"
             >Prev</a
           >
         </li>
@@ -31,7 +31,7 @@
           <li class="page-item active">
             <a
               href="{{ .URL }}"
-              class="mx-2 py-3 px-5 rounded-none relative block border-white border-0 duration-100 bg-blue-600 text-white hover:border-blue-700 dark:border-gray-600"
+              class="px-3 py-2 rounded-lg text-sm font-bold bg-sky-600 text-white"
               >{{ .PageNumber }}</a
             >
           </li>
@@ -41,7 +41,7 @@
           <li class="page-item">
             <a
               href="{{ .URL }}"
-              class="mx-2 py-3 px-5 rounded-none relative block border-white border-0 duration-100 bg-white text-blue-600 hover:bg-gray-400 hover:text-blue-700 dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700"
+              class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-warmgray-700 transition-colors duration-150"
               >{{ .PageNumber }}</a
             >
           </li>
@@ -49,9 +49,8 @@
           <!-- render skip pages -->
           {{ $.Scratch.Set "dot_rendered" true }}
           <li class="page-item disabled">
-            <a
-              class="mx-2 py-3 px-5 rounded-none relative block border-white border-0 cursor-auto pointer-events-none"
-              >...</a
+            <span class="px-3 py-2 text-sm text-gray-400 dark:text-gray-600"
+              >...</span
             >
           </li>
         {{ end }}
@@ -62,7 +61,7 @@
           <a
             href="{{ $pag.Next.URL }}"
             rel="next"
-            class="mx-2 py-3 px-5 rounded-none relative block border-white border-0 duration-100  bg-white text-blue-600 hover:bg-gray-400 hover:text-blue-700 dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700"
+            class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-warmgray-700 transition-colors duration-150"
             >Next</a
           >
         </li>
@@ -75,7 +74,7 @@
           <a
             href="{{ $pag.Last.URL }}"
             rel="last"
-            class="mx-2 py-3 px-5 rounded-none relative block border-white border-0 duration-100 bg-white text-blue-600 hover:bg-gray-400 hover:text-blue-700 dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700"
+            class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-warmgray-700 transition-colors duration-150"
             >Last</a
           >
         </li>

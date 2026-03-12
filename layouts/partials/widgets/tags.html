@@ -1,18 +1,25 @@
 {{ if .Site.Taxonomies.tags }}
-  <div class="bg-white panel mb-3 dark:bg-warmgray-900">
-    <p
-      class="text-xl text-center text-gray-700 py-3 pl-3 dark:text-gray-300 font-bold"
-    >
-      Tags
-    </p>
-    <div class="panel-block p-2">
+  <div
+    class="bg-white rounded-xl shadow-sm mb-4 overflow-hidden dark:bg-warmgray-900"
+  >
+    <div class="px-5 py-4 border-b border-gray-100 dark:border-warmgray-700">
+      <p
+        class="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400"
+      >
+        Tags
+      </p>
+    </div>
+    <div class="p-4">
       {{- $.Scratch.Set "myLimit" 0 }}
       {{- range $termName, $entries := .Site.Taxonomies.tags }}
         {{- $.Scratch.Set "myLimit" (add ($.Scratch.Get "myLimit") 1) }}
         {{- if le ($.Scratch.Get "myLimit") ($.Site.Param `tagslimit`) }}
-          <a href="{{ "/tags/" | relLangURL }}{{ $termName | urlize }}">
+          <a
+            href="{{ "/tags/" | relLangURL }}{{ $termName | urlize }}"
+            class="inline-block mr-1.5 mb-1.5"
+          >
             <span
-              class="duration-100 inline-flex py-2 leading-4 mr-2 mb-2 content-center bg-gray-100 justify-center h-8 px-3 text-blue-500 hover:text-blue-900 dark:bg-warmgray-800"
+              class="bg-gray-100 text-gray-700 rounded-full px-3 py-1 text-xs font-medium hover:bg-sky-50 hover:text-sky-700 transition-colors duration-150 dark:bg-warmgray-800 dark:text-gray-300 dark:hover:bg-warmgray-700"
             >
               {{ $termName }}
             </span></a

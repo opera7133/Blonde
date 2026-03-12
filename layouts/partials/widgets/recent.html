@@ -1,32 +1,31 @@
 {{ $recent := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
-{{ $recent_num := (5 | default 10) }}
+{{ $recent_num := ($.Site.Param `recentLimit` | default 5) }}
 {{- if $recent }}
-  <div class="bg-white panel mb-3 pb-5 dark:bg-warmgray-900">
-    <p
-      class="text-xl text-center text-gray-700 py-5 dark:text-gray-300 font-bold"
-    >
-      Recent Posts
-    </p>
-    <div class="mx-6">
+  <div
+    class="bg-white rounded-xl shadow-sm mb-4 overflow-hidden dark:bg-warmgray-900"
+  >
+    <div class="px-5 py-4 border-b border-gray-100 dark:border-warmgray-700">
+      <p
+        class="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400"
+      >
+        Recent Posts
+      </p>
+    </div>
+    <div class="divide-y divide-gray-100 dark:divide-warmgray-700">
       {{- range first $recent_num $recent }}
-        <a href="{{ .RelPermalink }}" class="">
-          <div
-            class="w-full block mt-3 bg-white hover:bg-gray-100 duration-200 dark:bg-warmgray-900 dark:text-gray-200 dark:hover:bg-warmgray-800"
+        <a
+          href="{{ .RelPermalink }}"
+          class="block px-5 py-3 hover:bg-gray-50 dark:hover:bg-warmgray-800 transition-colors duration-150"
+        >
+          <p
+            class="text-sm font-medium text-gray-900 dark:text-white leading-snug mb-1"
           >
-            <div class="px-2">
-              <div class="text-gray-900 font-bold text-xl dark:text-white">
-                {{ .Title }}
-              </div>
-              <p
-                class="text-sm text-gray-600 flex items-center pb-1 dark:text-gray-400"
-              >
-                <time
-                  ><span class="icon-access_time mr-1"></span
-                  >{{ .Date.Format "2006/01/02" }}</time
-                >
-              </p>
-            </div>
-          </div>
+            {{ .Title }}
+          </p>
+          <time
+            class="flex items-center text-xs text-gray-500 dark:text-gray-500 gap-1"
+            >{{ partial "icon.html" (dict "name" "schedule" "class" "text-xs") }}{{ .Date.Format "2006/01/02" }}</time
+          >
         </a>
       {{- end }}
     </div>

@@ -11,8 +11,10 @@
     <h2 class="text-3xl dark:text-white font-semibold">
       {{ if eq .Data.Plural "archives" }}
       Archives: {{ .Title }}
-      {{ else }}
-      {{ humanize .Title }}
+      {{ else if eq .Data.Plural "tags" }}
+      Tags: {{ humanize .Title }}
+      {{ else if eq .Data.Plural "categories" }}
+      Categories: {{ humanize .Title }}
       {{ end }}
     </h2>
     {{end}}

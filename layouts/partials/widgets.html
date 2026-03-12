@@ -1,4 +1,10 @@
-<div class="hidden lg:block lg:col-span-1">
+<div
+  class="{{ if .Site.Params.widgets.mobile }}
+    col-span-3 lg:col-span-1
+  {{ else }}
+    hidden lg:block lg:col-span-1
+  {{ end }}"
+>
   {{ $root := . }}
   {{ with (default .Site.Params.widgets.widgets .Params.widgets) -}}
     {{ range $widget := . }}
